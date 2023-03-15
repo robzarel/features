@@ -1,6 +1,7 @@
 {
   "name": "features",
   "version": "0.1.0",
+  "homepage": "https://robzarel.github.io/features",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -22,7 +23,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix --ext .tsx --ignore-path .gitignore ."
+    "lint": "eslint --fix --ext .tsx --ignore-path .gitignore .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "simple-git-hooks": {
     "pre-commit": "npx --no-install lint-staged"
@@ -59,6 +62,7 @@
     "@typescript-eslint/parser": "^5.55.0",
     "eslint": "^8.36.0",
     "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^5.0.0",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.4",
     "simple-git-hooks": "^2.8.1",

@@ -12,6 +12,6 @@ ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
-      asdf</BrowserRouter  >
+    </BrowserRouter >
   </React.StrictMode>
 );
