@@ -42,6 +42,21 @@ comfort zone
 - prettier is active
 
 todo, to come to the comfort zone:
-- figure out how to convert all files in vscode to the 'two spaces' format
+done - figure out how to convert all files in vscode to the 'two spaces' format
 done - configure tab length in vscode 
 - install prettier and make its config comport for me
+
+
+
+prettier and eslint
+- install packages
+    - "@typescript-eslint/eslint-plugin": "^5.55.0",
+    - "@typescript-eslint/parser": "^5.55.0",
+    - "eslint": "^8.36.0",
+    - "eslint-plugin-react": "^7.32.2",
+    - "prettier": "^2.8.4"
+- add and configure files
+    - .prettierrc.json
+    - .prettierignore (configure as your .gitignore file and add some specific folders)
+    - .eslintrc.json (go throught wizard with "eslint --init" comand)
+- install ESLint plugin for vscode for adding authofix  feature to context file menu

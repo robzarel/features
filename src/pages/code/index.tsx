@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Code = () => {
   return <div>code example will be here soon</div>;
 };

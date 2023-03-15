@@ -1,9 +1,10 @@
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import Layout from "../components/layout";
-import Experience from "./experience";
-import Code from "./code";
-import NotFound from "./not-found";
+import Layout from '../components/layout';
+import Experience from './experience';
+import Code from './code';
+import NotFound from './not-found';
 
 const App = () => {
   return (

@@ -1,5 +1,6 @@
-import "./index.css";
-import Navigation from "../../components/navigation";
+import React from 'react';
+
+import './index.css';
 
 const Experience = () => {
   return <div>Experience info will be here soon</div>;
