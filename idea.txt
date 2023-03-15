@@ -37,9 +37,11 @@ feature
 
 
 comfort zone
-- all indentation in all files are two spaces
-- tab length is 2 spaces
-- prettier is active
+1) code formatters and linters 
+  - all indentation in all files are two spaces / tab length is 2 spaces / prettier is active
+2) autho checks by stage and commit
+3) css modules
+4) tests env are configured
 
 todo, to come to the comfort zone:
 done - figure out how to convert all files in vscode to the 'two spaces' format
@@ -48,7 +50,7 @@ done - configure tab length in vscode
 
 
 
-prettier and eslint
+1) setup common code style in the project: prettier and eslint
 - install packages
     - "@typescript-eslint/eslint-plugin": "^5.55.0",
     - "@typescript-eslint/parser": "^5.55.0",
@@ -60,3 +62,24 @@ prettier and eslint
     - .prettierignore (configure as your .gitignore file and add some specific folders)
     - .eslintrc.json (go throught wizard with "eslint --init" comand)
 - install ESLint plugin for vscode for adding authofix  feature to context file menu
+2) set up automatically code checks by stage and commit phases
+- install packages
+    - lint-staged
+    - simple-git-hooks
+- configure package.json
+  "simple-git-hooks": {
+    "pre-commit": "npx --no-install lint-staged" // you can add tests here
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+
+3) setup css-modules with ts project
+- install typescript-plugin-css-modules
+- configure tsconfig.json with "plugins": [{ "name": "typescript-plugin-css-modules" }]
