@@ -24,6 +24,18 @@
     "eject": "react-scripts eject",
     "lint": "eslint --fix --ext .tsx --ignore-path .gitignore ."
   },
+  "simple-git-hooks": {
+    "pre-commit": "npx --no-install lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -47,6 +59,8 @@
     "@typescript-eslint/parser": "^5.55.0",
     "eslint": "^8.36.0",
     "eslint-plugin-react": "^7.32.2",
-    "prettier": "^2.8.4"
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.4",
+    "simple-git-hooks": "^2.8.1"
   }
 }
