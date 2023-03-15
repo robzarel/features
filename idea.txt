@@ -1,0 +1,47 @@
+при скролле должно продвигаться и сменятся экраны должны. 
+цветовое разделение менеджерской и технической веток
+упор на фичи и краткое описание команд
+
+экспорт резюмехи
+
+dicsover me by (navigation section):
+- education
+- experience
+- stack
+- achievements
+- education
+
+me
+- intro
+- contacts
+- work experience
+- stack
+- education
+-- projects (light pack assemblimg, dc/ac inverter bluetooth, mc programming)
+- languages
+- achievements
+
+goal
+- experience review
+    - easy way for me to represent myself to new employer
+    - easy way to add new skills and experience
+- code blocks to resum (просто список с поиском и код с копированием для последующей работы и примерчики)
+
+Perfect picture of project
+- no backend, data are stored in files within src
+
+
+feature
+- scroll by history of experience
+- extract resume from site
+
+
+comfort zone
+- all indentation in all files are two spaces
+- tab length is 2 spaces
+- prettier is active
+
+todo, to come to the comfort zone:
+- figure out how to convert all files in vscode to the 'two spaces' format
+done - configure tab length in vscode 
+- install prettier and make its config comport for me

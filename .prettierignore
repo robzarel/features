@@ -1,0 +1,5 @@
+*.html.
+
+# Ignore artifacts:
+public
+coverage
