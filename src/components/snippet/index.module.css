@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+
+.content {
+  display: none;
+  width: 100%;
+  gap: 10px;
+}
+.content[data-is-visible="true"] {
+  display: flex;
+}
+
+.code {
+  width: 60%;
+}
+
+.category {
+  width: 40%;
+}
+
+.meta {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.name,
+.description {
+  margin: 0;
+  height: 25px;
+}
+.toggle {
+  width: 60px;
+  height: 25px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 2px;
+}
