@@ -83,3 +83,20 @@ done - configure tab length in vscode
 3) setup css-modules with ts project
 - install typescript-plugin-css-modules
 - configure tsconfig.json with "plugins": [{ "name": "typescript-plugin-css-modules" }]
+
+
+
+feature - пользовательские фичи. например:
+- валидация форм
+  - базовые элементы (инпуты)
+  - валидация загружемых файлов
+- пагинация
+- поиск и фильтрация
+- модальное окно
+-- 
+
+
+- feature
+-- solution categories []
+--- snippets []
+

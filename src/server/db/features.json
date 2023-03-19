@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "name": "Form validation",
+    "description": "Form validation feature is an combine approach, which contsists of several parts: html elements, form hooks and validator. Thanks react hooks and separated validators, all three aspects are completelly indemedend - you can use any ui (or none if your form is fully programmatic). You can use validators for any platform (browser, mobile, node), since its written with simple ts. And you can process form submittion with set of ready react hooks",
+    "categories": [
+      {
+        "id": 0,
+        "name": "validators"
+      },
+      {
+        "id": 1,
+        "name": "form hooks"
+      }
+    ],
+    "snippets": [
+      {
+        "id": 0,
+        "name": "validateValue function"
+      },
+      {
+        "id": 1,
+        "name": "required validator"
+      }
+    ]
+  }
+]

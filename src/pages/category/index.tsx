@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-import CategoryType from '../../types/core/category';
+import CategoryType from "../../types/core/category";
 // import Styles from './index.module.css';
 
 // import Snippet from '../../components/snippet';
@@ -27,7 +27,7 @@ const Category = () => {
 
   useEffect(() => {
     const fetchCategoryInfo = async () => {
-      const data = await fetch(`http://localhost:3001/api/category/${id}`);
+      const data = await fetch(`http://localhost:3001/api/categories/${id}`);
       const parsed: CategoryType = await data.json();
 
       setCategory(parsed);
@@ -38,17 +38,13 @@ const Category = () => {
 
   const renderCategoryInfo = (cat: CategoryType) => (
     <div>
-      <ul>
-        <li>description: {decodeURI(cat.description)}</li>
-      </ul>
+      <p>
+        <span>{cat.name}</span>: {decodeURI(cat.description)}
+      </p>
     </div>
   );
 
-  return (
-    <div>
-      { category ? renderCategoryInfo(category) : <p>no data </p>}
-    </div>
-  );
+  return <div>{category ? renderCategoryInfo(category) : <p>no data </p>}</div>;
 };
 
 export default Category;
