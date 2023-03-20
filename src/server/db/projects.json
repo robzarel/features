@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "name": "Tinkoff Journal",
+    "description": "Russia's largest online magazine about money (20 millions visits per month)"
+  },
+  {
+    "id": 1,
+    "name": "Alfabank credit card obtaining web app",
+    "description": "Product took the top 3 places for 3 years in a row by all of the Russian banks;"
+  },
+  {
+    "id": 2,
+    "name": "СTC web media player",
+    "description": "designed and write from scratch web media player"
+  }
+]

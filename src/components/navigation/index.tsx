@@ -7,16 +7,13 @@ const Navigation = () => {
   return (
     <div className={Styles.list}>
       <NavLink className={Styles.listItem} to="/">
-        features
+        experience
       </NavLink>
-      <NavLink className={Styles.listItem} to="/categories">
-        categories
+      <NavLink className={Styles.listItem} to="/search">
+        search
       </NavLink>
-      <NavLink className={Styles.listItem} to="/projects">
-        projects
-      </NavLink>
-      <NavLink className={Styles.listItem} to="/snippets">
-        snippets
+      <NavLink className={Styles.listItem} to="/contacts">
+        contacts
       </NavLink>
     </div>
   );

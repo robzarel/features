@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import CategoryType from "../../types/core/category";
+import CategoryType from "../../types/core/solution";
 // import Styles from './index.module.css';
 
 // import Snippet from '../../components/snippet';

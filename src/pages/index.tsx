@@ -2,22 +2,26 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Layout from "../components/layout";
-import Features from "./features";
-import Categories from "./categories";
-import Category from "./category";
-import Snippets from "./snippets";
-import Projects from "./projects";
+
+import Experience from "./experience";
+import Search from "./search";
+import Contacts from "./contacts";
 import NotFound from "./not-found";
+
+import Feature from "./feature";
+import Project from "./project";
+import Solution from "./solution";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Features />} />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/snippets" element={<Snippets />} />
-        <Route path="/category/:id" element={<Category />} />
+        <Route path="/" element={<Experience />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/project/:id" element={<Project />} />
+        <Route path="/feature/:id" element={<Feature />} />
+        <Route path="/solution/:id" element={<Solution />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

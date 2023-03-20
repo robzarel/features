@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.description {
+  width: 100%;
+}
+.columns {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.business,
+.development {
+  flex-grow: 1;
+}
