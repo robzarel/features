@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import Styles from "./index.module.css";
-import Snippet from "../../../components/snippet";
+import Styles from './index.module.css';
+import Snippet from '../../../components/snippet';
 
-import type { default as SnippetType } from "../../../types/core/snippet";
+import type { default as SnippetType } from '../../../types/core/snippet';
 
 const Snippets = () => {
   const [snippets, setSnippets] = useState<SnippetType[]>([]);
 
   useEffect(() => {
     const fetchSnippets = async () => {
-      const snippetsPromise = await fetch("http://localhost:3001/api/snippets");
+      const snippetsPromise = await fetch('http://localhost:3001/api/snippets');
 
       const parsed = await snippetsPromise.json();
       setSnippets(parsed);

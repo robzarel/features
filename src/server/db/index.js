@@ -12,5 +12,5 @@ module.exports = () => ({
   projects: projects,
   features: features,
   solutions: solutions,
-  snippets: snippets
+  snippets: snippets,
 });

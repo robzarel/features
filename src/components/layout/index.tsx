@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { Outlet } from "react-router-dom";
-import Header from "../header";
-import Footer from "../footer";
-import Navigation from "../navigation";
+import { Outlet } from 'react-router-dom';
+import Header from '../header';
+import Footer from '../footer';
+import Navigation from '../navigation';
 
-import Styles from "./index.module.css";
+import Styles from './index.module.css';
 
 const Layout = () => {
   return (

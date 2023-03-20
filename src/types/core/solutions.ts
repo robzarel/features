@@ -1,5 +1,5 @@
-import Solution from "./solution";
+import Solution from './solution';
 
-type Solutions = Pick<Solution, "id" | "name" | "description">[];
+type Solutions = Pick<Solution, 'id' | 'name' | 'description'>[];
 
 export default Solutions;

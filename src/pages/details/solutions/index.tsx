@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
-import { default as SolutionsType } from "../../../types/core/solutions";
+import { default as SolutionsType } from '../../../types/core/solutions';
 
-import Styles from "./index.module.css";
+import Styles from './index.module.css';
 
 const Solutions = () => {
   const [solutions, setSolutions] = useState<SolutionsType>([]);
 
   useEffect(() => {
     const fetchSnippets = async () => {
-      const fetched = await fetch("http://localhost:3001/api/solutions");
+      const fetched = await fetch('http://localhost:3001/api/solutions');
       const parsed = await fetched.json();
       setSolutions(parsed);
     };

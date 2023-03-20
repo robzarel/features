@@ -1,5 +1,5 @@
-import type SKILL from "./skill";
-import type ROLE from "./role";
+import type SKILL from './skill';
+import type ROLE from './role';
 
 type PROJECT = {
   id: number;
