@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "kind": "development",
     "role": "Senior frontend developer",
     "place": "Tinkoff Journal",
     "abstract": "Russia's largest online magazine about money (20 millions visits per month)",
@@ -17,6 +18,7 @@
   },
   {
     "id": 1,
+    "kind": "management",
     "role": "Director of Resource Management Department",
     "place": "High Technologies Center",
     "abstract": "Full cycle custom development company",

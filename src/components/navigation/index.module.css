@@ -5,15 +5,10 @@
 .list {
   list-style: none;
   margin: 0;
-  padding: 10px 5px;
   display: flex;
   gap: 10px;
 }
 
 .listItem.active {
   background-color: red;
-}
-
-.listItem {
-  padding: 10px;
 }

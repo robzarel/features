@@ -1,16 +1,11 @@
-import React from 'react';
-import Styles from './index.module.css';
+import React from "react";
+import Styles from "./index.module.css";
 
 type Props = {
   children?: React.ReactNode | React.ReactNode[];
 };
 const Header = (props: Props) => {
-  return (
-    <div className={Styles.wrapper}>
-      Header
-      {props.children}
-    </div>
-  );
+  return <div className={Styles.wrapper}>{props.children}</div>;
 };
 
 export default Header;
