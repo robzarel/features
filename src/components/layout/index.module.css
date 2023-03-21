@@ -23,12 +23,12 @@
 
 .header {
   flex: 0 1 auto;
-  background-color: rgba(145, 212, 210, 0.5);
+  background-color: rgba(var(--bg-primary), 0.9);
 }
 .main {
   flex: 1 1 auto;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: white;
+  color: black;
 }
 
 .footer {

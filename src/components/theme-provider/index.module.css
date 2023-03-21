@@ -1,0 +1,67 @@
+:root {
+  --toggler-padding: 3px;
+  --ball-diameter: 18px;
+  --toggler-width: 54px;
+}
+
+.simpleToggler {
+  display: flex;
+  width: var(--toggler-width);
+  border-radius: var(--toggler-width);
+  padding: var(--toggler-padding);
+  background-color: rgb(var(--bg-primary));
+  border: var(--toggler-padding) solid rgb(var(--text-primary));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  transition: backgroundColor 0.2s ease;
+}
+
+.moon,
+.sun {
+  position: absolute;
+  z-index: 0;
+  width: var(--ball-diameter);
+  height: var(--ball-diameter);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moon {
+  left: var(--toggler-padding);
+}
+.moon::after {
+  content: '🌚';
+}
+.sun {
+  right: var(--toggler-padding);
+}
+.sun::after {
+  content: '🌞';
+}
+
+.ball {
+  position: relative;
+  z-index: 1;
+  width: var(--ball-diameter);
+  height: var(--ball-diameter);
+  background-color: rgba(var(--text-primary), 1);
+  border-radius: 50%;
+  transition: transform 0.2s linear, backgroundColor 0.2s ease;
+}
+
+html[data-theme='light'] .simpleToggler {
+  transform: translateX(0);
+}
+
+html[data-theme='dark'] .ball {
+  transform: translateX(
+    calc(
+      var(--toggler-width) - var(--ball-diameter) - 4 * var(--toggler-padding)
+    )
+  );
+}

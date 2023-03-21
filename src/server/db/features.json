@@ -30,5 +30,12 @@
     "description": "web app color theming feature",
     "categories": [],
     "snippets": []
+  },
+  {
+    "id": 2,
+    "name": "копирование по нажатию",
+    "description": "фича программного копирования текста по нажатию на элемент",
+    "categories": [],
+    "snippets": []
   }
 ]

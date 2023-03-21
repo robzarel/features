@@ -1,5 +1,7 @@
 import React, { useEffect, createContext, useState, useContext } from 'react';
 
+import Styles from './index.module.css';
+
 const supportedThemes = {
   light: 'light',
   dark: 'dark',
@@ -17,17 +19,6 @@ const ThemeContext = createContext<
   | undefined
 >(undefined);
 
-const getTheme = (): Themes => {
-  let theme = localStorage.getItem(StorageKey);
-
-  if (!theme) {
-    localStorage.setItem(StorageKey, 'light');
-    theme = 'light';
-  }
-
-  return theme as Themes;
-};
-
 const useTheme = () => {
   const context = useContext(ThemeContext);
 
@@ -40,7 +31,18 @@ const useTheme = () => {
   return context;
 };
 
-const ThemeProvider = (props: { children: React.ReactNode }) => {
+const getTheme = (): Themes => {
+  let theme = localStorage.getItem(StorageKey);
+
+  if (!theme) {
+    localStorage.setItem(StorageKey, 'light');
+    theme = 'light';
+  }
+
+  return theme as Themes;
+};
+
+const Theme = (props: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Themes>(getTheme);
 
   useEffect(() => {
@@ -61,5 +63,25 @@ const ThemeProvider = (props: { children: React.ReactNode }) => {
   );
 };
 
+Theme.SimpleToggler = function SimpleToggler() {
+  const { theme, setTheme } = useTheme();
+
+  const handleSwitchTheme = () => {
+    if (theme === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  };
+
+  return (
+    <div className={Styles.simpleToggler} onClick={handleSwitchTheme}>
+      <div className={Styles.moon} />
+      <div className={Styles.sun} />
+      <div className={Styles.ball} />
+    </div>
+  );
+};
+
 export { useTheme };
-export default ThemeProvider;
+export default Theme;

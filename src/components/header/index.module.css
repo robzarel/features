@@ -1,6 +1,38 @@
 .wrapper {
   width: 100%;
   display: flex;
-  padding: 20px 10px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.toggler {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
+.info {
+}
+.role {
+  color: rgb(var(--text-primary));
+}
+.photo {
+  position: absolute;
+  right: 10px;
+  width: 160px;
+  height: 160px;
+  border: 6px solid rgb(var(--text-primary));
+  margin-left: auto;
+  border-radius: 50%;
+  background-image: url('http://placekitten.com/160/160');
   box-sizing: border-box;
+}
+.contacts {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  row-gap: 5px;
+}
+.link {
+  width: 50%;
 }

@@ -1,11 +1,11 @@
 :root {
   /* light theme tokens */
-  --bg-primary-light: white;
-  --text-primary-light: black;
+  --bg-primary-light: 17, 97, 142;
+  --text-primary-light: 66, 198, 172;
 
   /* dark theme tokens */
-  --bg-primary-dark: black;
-  --text-primary-dark: white;
+  --bg-primary-dark: 0, 0, 0;
+  --text-primary-dark: 66, 198, 172;
 }
 
 /* map tokens to proper theme */

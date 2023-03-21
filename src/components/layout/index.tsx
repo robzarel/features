@@ -12,9 +12,7 @@ const Layout = () => {
     <div className={Styles.layout}>
       <header className={Styles.header}>
         <div className={Styles.wrapper}>
-          <Header>
-            <Navigation />
-          </Header>
+          <Header />
         </div>
       </header>
       <main className={Styles.main}>
