@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import { CopyBlock, dracula } from "react-code-blocks";
+import { CopyBlock, dracula } from 'react-code-blocks';
 
-import type { default as SnippetType } from "../../types/core/snippet";
+import type { default as SnippetType } from '../../types/core/snippet';
 
-import Styles from "./index.module.css";
+import Styles from './index.module.css';
 
 const Snippet = (props: SnippetType) => {
   const { id, name, code, language, category } = props;
@@ -22,8 +22,8 @@ const Snippet = (props: SnippetType) => {
         <p className={Styles.name}>{name}:</p>
         <button
           className={Styles.toggle}
-          type="button"
-          value="code"
+          type='button'
+          value='code'
           onClick={handleToggleClick}
         >
           code

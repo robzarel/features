@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import Styles from "./index.module.css";
+import Styles from './index.module.css';
 
-import EXPERIENCE from "../../types/entities/experience";
+import EXPERIENCE from '../../types/entities/experience';
 
 const Experience = () => {
   const [experience, setExperience] = useState<EXPERIENCE[]>([]);
 
   useEffect(() => {
     const fetchExp = async () => {
-      const fetched = await fetch("http://localhost:3001/api/experience");
+      const fetched = await fetch('http://localhost:3001/api/experience');
       const parsed = await fetched.json();
       setExperience(parsed);
     };
@@ -17,8 +17,8 @@ const Experience = () => {
     fetchExp();
   }, []);
 
-  const devRoles = experience.filter((item) => item.kind === "development");
-  const mngRoles = experience.filter((item) => item.kind === "management");
+  const devRoles = experience.filter((item) => item.kind === 'development');
+  const mngRoles = experience.filter((item) => item.kind === 'management');
 
   return (
     <div className={Styles.wrapper}>

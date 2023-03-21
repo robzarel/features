@@ -1,4 +1,4 @@
-import { Snippet } from "react-code-blocks";
+import { Snippet } from 'react-code-blocks';
 
 type Snippet = {
   id: number;
