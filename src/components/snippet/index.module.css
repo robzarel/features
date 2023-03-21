@@ -11,7 +11,7 @@
   width: 100%;
   gap: 10px;
 }
-.content[data-is-visible='true'] {
+.content[data-is-visible="true"] {
   display: flex;
 }
 
