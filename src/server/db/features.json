@@ -23,5 +23,12 @@
         "name": "required validator"
       }
     ]
+  },
+  {
+    "id": 1,
+    "name": "color theming",
+    "description": "web app color theming feature",
+    "categories": [],
+    "snippets": []
   }
 ]

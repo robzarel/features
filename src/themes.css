@@ -1,0 +1,20 @@
+:root {
+  /* light theme tokens */
+  --bg-primary-light: white;
+  --text-primary-light: black;
+
+  /* dark theme tokens */
+  --bg-primary-dark: black;
+  --text-primary-dark: white;
+}
+
+/* map tokens to proper theme */
+[data-theme='light'] {
+  --bg-primary: var(--bg-primary-light);
+  --text-primary: var(--text-primary-light);
+}
+
+[data-theme='dark'] {
+  --bg-primary: var(--bg-primary-dark);
+  --text-primary: var(--text-primary-dark);
+}
