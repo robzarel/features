@@ -1,6 +1,7 @@
 :root {
   /* light theme tokens */
   --bg-primary-light: 17, 97, 142;
+  --bg-accent-on-primary-light: 17, 97, 142;
   --text-primary-light: 66, 198, 172;
 
   /* dark theme tokens */
@@ -11,6 +12,7 @@
 /* map tokens to proper theme */
 [data-theme='light'] {
   --bg-primary: var(--bg-primary-light);
+  --bg-accent-on-primary: var(--bg-primary-light);
   --text-primary: var(--text-primary-light);
 }
 

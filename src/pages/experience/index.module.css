@@ -1,16 +1,17 @@
 :root {
-  --left-width: 40%;
+  --left-width: 60%;
+  --gap: 10%;
 }
 .wrapper {
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: var(--gap);
 }
 
 .leftColumn {
-  width: 40%;
+  width: var(--left-width);
 }
 .rightColumn {
   margin-left: auto;
-  width: 30%;
+  width: calc(100% - var(--gap) - var(--left-width));
 }

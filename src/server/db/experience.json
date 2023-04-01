@@ -13,8 +13,8 @@
       "implementing of unit/integration tests across modules/user scenarios. "
     ],
     "description": "some full detailed description of the role, tasks and acievements",
-    "started": "24.10.2022",
-    "ended": "06.03.2023",
+    "started": "2022.10.24",
+    "ended": "2023.03.06",
     "projects": [],
     "features": []
   },
@@ -32,7 +32,67 @@
       "5% employee utilization growth due to upgrading the resource planning system"
     ],
     "description": "some full detailed description of the role, tasks and acievements",
-    "started": "01.01.2020",
-    "ended": "21.10.2022"
+    "started": "2020.01.01",
+    "ended": "2022.10.21",
+    "projects": [],
+    "features": []
+  },
+  {
+    "id": 2,
+    "kind": "management",
+    "role": "Resource manager of frontend department",
+    "company": "High Technologies Center",
+    "city": "izhevsk",
+    "country": "russia",
+    "abstract": "Full cycle custom development company",
+    "achievements": [
+      "100% department headcount growth in 1.5 year (15 -> 30ppl)",
+      "creation of learning program for junior developers",
+      "hiring, onboarding, assessment, motivation and retention of specialists."
+    ],
+    "description": "some full detailed description of the role, tasks and acievements",
+    "started": "2018.06.01",
+    "ended": "2019.12.31",
+    "projects": [],
+    "features": []
+  },
+  {
+    "id": 3,
+    "kind": "development",
+    "role": "Senior Frontend Engineer",
+    "company": "High Technologies Center",
+    "city": "izhevsk",
+    "country": "russia",
+    "abstract": "Full cycle custom development company",
+    "achievements": [
+      "development credit card obtaining web app in 'Alfabank'. Product took the top 3 places for 3 years in a row by all of the Russian banks",
+      "designed and write from scratch web media player (based on video.js). Player is currently used by 'CTC Media' holding (ctc.ru)",
+      "hiring, onboarding, assessment, motivation and retention of specialists."
+    ],
+    "description": "some full detailed description of the role, tasks and acievements",
+    "started": "2017.07.01",
+    "ended": "2019.12.31",
+    "projects": [],
+    "features": []
+  },
+  {
+    "id": 4,
+    "kind": "development",
+    "role": "Frontend Engineer",
+    "company": "High Technologies Center",
+    "city": "izhevsk",
+    "country": "russia",
+    "abstract": "Full cycle custom development company",
+    "achievements": [
+      "development of an app for personal finance management in 'Alfabank'. The app is build in in one of the largest internet banks",
+      "development of an photo contest app in role of a full-stack developer",
+      "development of an 'videomore' smartTV app",
+      "development of an corporate reference book (desktop app)"
+    ],
+    "description": "some full detailed description of the role, tasks and acievements",
+    "started": "2015.02.11",
+    "ended": "2017.07.31",
+    "projects": [],
+    "features": []
   }
 ]

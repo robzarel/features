@@ -20,13 +20,10 @@ const Education = (props: Props) => {
 
         return (
           <div className={Styles.item} key={item.id}>
-            <p>{item.degree}</p>
-            <p>{item.univercity}</p>
+            <p className={Styles.degree}>{item.degree}</p>
+            <p className={Styles.univercity}>{item.univercity}</p>
             <p className={Styles.period}>{`${startedFrom}-${endedAt}`}</p>
-            <div className={Styles.place}>
-              <p className={Styles.univercity}>{item.univercity}</p>
-              <h4 className={Styles.place}>{place}</h4>
-            </div>
+            <h4 className={Styles.place}>{place}</h4>
           </div>
         );
       })}

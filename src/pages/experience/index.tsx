@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Styles from './index.module.css';
+import api from '../../api';
 
 import WorkExperience from '../../components/experience';
 import Skills from '../../components/skills';
@@ -10,6 +10,8 @@ import EXPERIENCE from '../../types/entities/experience';
 import SKILL from '../../types/core/skill';
 import EDUCATION from '../../types/core/education';
 
+import Styles from './index.module.css';
+
 const Experience = () => {
   const [experience, setExperience] = useState<EXPERIENCE[]>([]);
   const [skills, setSkills] = useState<SKILL[]>([]);
@@ -18,15 +20,9 @@ const Experience = () => {
   useEffect(() => {
     const fetchData = async () => {
       // todo: make all request parallel
-      const fetchedExp = await fetch(
-        'https://raw.githubusercontent.com/robzarel/features/main/src/server/db/experience.json'
-      );
-      const fetchedSkills = await fetch(
-        'https://raw.githubusercontent.com/robzarel/features/main/src/server/db/skills.json'
-      );
-      const fetchedEducation = await fetch(
-        'https://raw.githubusercontent.com/robzarel/features/main/src/server/db/education.json'
-      );
+      const fetchedExp = await api.get.experience();
+      const fetchedSkills = await api.get.skills();
+      const fetchedEducation = await api.get.education();
 
       const parsedExp: EXPERIENCE[] = await fetchedExp.json();
       const parsedSkills: SKILL[] = await fetchedSkills.json();
@@ -43,7 +39,7 @@ const Experience = () => {
   return (
     <div className={Styles.wrapper}>
       <div className={Styles.leftColumn}>
-        <h2 className={Styles.title}>Work Experience !!!!5</h2>
+        <h2 className={Styles.title}>Work Experience</h2>
         {experience.map((item) => (
           <WorkExperience key={item.id} {...item} />
         ))}

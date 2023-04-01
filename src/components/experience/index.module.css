@@ -11,21 +11,28 @@
 .role {
   margin: 0 0 10px 0;
 }
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+}
 .period {
   margin: 0;
+  color: rgb(var(--text-primary));
+  font-style: italic;
+  font-size: 12px;
 }
-
 .place {
   margin: 0;
   display: flex;
+  margin-left: auto;
+  color: rgb(var(--text-primary));
+  font-style: italic;
+  font-size: 16px;
 }
 .company {
   margin: 0;
 }
-.city {
-  margin: 0;
-  margin-left: auto;
-}
+
 .achievements {
   width: 100%;
 }

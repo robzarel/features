@@ -4,5 +4,21 @@
   gap: 10px;
 }
 
+.degree {
+  margin: 2px 0;
+  font-weight: bold;
+}
 .item {
+}
+.period,
+.place {
+  margin: 0;
+  color: rgb(var(--text-primary));
+  font-style: italic;
+  font-size: 12px;
+}
+.place {
+}
+.univercity {
+  margin: 2px 0;
 }

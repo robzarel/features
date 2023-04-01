@@ -3,3 +3,11 @@
   display: flex;
   justify-content: center;
 }
+
+.siteMap {
+  margin-right: auto;
+}
+
+.title {
+  color: white;
+}

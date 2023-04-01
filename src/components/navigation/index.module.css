@@ -1,14 +1,20 @@
-.wrapper {
-  display: flex;
-}
-
 .list {
+  display: flex;
+  gap: 5px;
   list-style: none;
   margin: 0;
-  display: flex;
-  gap: 10px;
+}
+.list[data-mode='vertical'] {
+  flex-direction: row;
+}
+.list[data-mode='vertical'] {
+  flex-direction: column;
 }
 
+.listItem {
+  color: white;
+  text-decoration: none;
+}
 .listItem.active {
   background-color: red;
 }

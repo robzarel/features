@@ -3,9 +3,15 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Styles from './index.module.css';
 
-const Navigation = () => {
+type Props = {
+  mode?: 'vertical' | 'horizontal';
+};
+
+const Navigation = (props: Props) => {
+  const { mode = 'horizontal' } = props;
+
   return (
-    <div className={Styles.list}>
+    <div className={Styles.list} data-mode={mode}>
       <NavLink className={Styles.listItem} to='/'>
         experience
       </NavLink>
