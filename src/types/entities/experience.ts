@@ -5,7 +5,9 @@ type Experience = {
   id: number;
   kind: 'development' | 'management';
   role: string;
-  place: string;
+  city: string;
+  country: string;
+  company: string;
   abstract: string;
   achievements: string[];
   description: string;

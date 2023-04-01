@@ -3,7 +3,9 @@
     "id": 0,
     "kind": "development",
     "role": "Senior frontend developer",
-    "place": "Tinkoff Journal",
+    "company": "Tinkoff Journal",
+    "city": "izhevsk",
+    "country": "russia",
     "abstract": "Russia's largest online magazine about money (20 millions visits per month)",
     "achievements": [
       "frontend app architecture design for content editors (back-office)",
@@ -20,7 +22,9 @@
     "id": 1,
     "kind": "management",
     "role": "Director of Resource Management Department",
-    "place": "High Technologies Center",
+    "company": "High Technologies Center",
+    "city": "izhevsk",
+    "country": "russia",
     "abstract": "Full cycle custom development company",
     "achievements": [
       "30% company's production headcount growth in 2 years (140 -> 200ppl)",

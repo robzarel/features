@@ -1,9 +1,16 @@
+:root {
+  --left-width: 40%;
+}
 .wrapper {
   width: 100%;
   display: flex;
   gap: 20px;
 }
 
-.column {
-  width: 50%;
+.leftColumn {
+  width: 40%;
+}
+.rightColumn {
+  margin-left: auto;
+  width: 30%;
 }

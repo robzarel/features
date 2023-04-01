@@ -2,35 +2,57 @@ import React, { useState, useEffect } from 'react';
 
 import Styles from './index.module.css';
 
+import WorkExperience from '../../components/experience';
+import Skills from '../../components/skills';
+import Education from '../../components/education';
+
 import EXPERIENCE from '../../types/entities/experience';
+import SKILL from '../../types/core/skill';
+import EDUCATION from '../../types/core/education';
 
 const Experience = () => {
   const [experience, setExperience] = useState<EXPERIENCE[]>([]);
+  const [skills, setSkills] = useState<SKILL[]>([]);
+  const [education, setEducation] = useState<EDUCATION[]>([]);
 
   useEffect(() => {
-    const fetchExp = async () => {
-      const fetched = await fetch('http://localhost:3001/api/experience');
-      const parsed = await fetched.json();
-      setExperience(parsed);
+    const fetchData = async () => {
+      // todo: make all request parallel
+      const fetchedExp = await fetch('http://localhost:3001/api/experience');
+      const fetchedSkills = await fetch('http://localhost:3001/api/skills');
+      const fetchedEducation = await fetch(
+        'http://localhost:3001/api/education'
+      );
+
+      const parsedExp: EXPERIENCE[] = await fetchedExp.json();
+      const parsedSkills: SKILL[] = await fetchedSkills.json();
+      const parsedEducation: EDUCATION[] = await fetchedEducation.json();
+
+      setExperience(parsedExp);
+      setSkills(parsedSkills);
+      setEducation(parsedEducation);
     };
 
-    fetchExp();
+    fetchData();
   }, []);
-
-  const devRoles = experience.filter((item) => item.kind === 'development');
-  const mngRoles = experience.filter((item) => item.kind === 'management');
 
   return (
     <div className={Styles.wrapper}>
-      <div className={Styles.column}>
-        {devRoles.map((item) => (
-          <div key={item.id}>{item.role}</div>
+      <div className={Styles.leftColumn}>
+        <h2 className={Styles.title}>Work Experience</h2>
+        {experience.map((item) => (
+          <WorkExperience key={item.id} {...item} />
         ))}
       </div>
-      <div className={Styles.column}>
-        {mngRoles.map((item) => (
-          <div key={item.id}>{item.role}</div>
-        ))}
+      <div className={Styles.rightColumn}>
+        <div className={Styles.skills}>
+          <h2 className={Styles.title}>Skills</h2>
+          <Skills data={skills} />
+        </div>
+        <div className={Styles.education}>
+          <h2 className={Styles.title}>Education</h2>
+          <Education data={education} />
+        </div>
       </div>
     </div>
   );

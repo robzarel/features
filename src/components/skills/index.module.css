@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  border-radius: 6px;
+  padding: 6px 14px;
+  background-color: rgba(var(--bg-primary), 0.6);
+  color: white;
+}

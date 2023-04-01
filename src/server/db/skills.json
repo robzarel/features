@@ -1,0 +1,92 @@
+[
+  {
+    "id": 0,
+    "name": "typescript",
+    "kind": "hard",
+    "category": "language",
+    "isPrimary": true,
+    "proficiency": "advanced",
+    "experience": 3,
+    "lastUsage": 2023
+  },
+  {
+    "id": 1,
+    "name": "javascript",
+    "kind": "hard",
+    "category": "language",
+    "isPrimary": true,
+    "proficiency": "expert",
+    "experience": 7,
+    "lastUsage": 2023
+  },
+  {
+    "id": 2,
+    "name": "react",
+    "kind": "hard",
+    "category": "lybrary",
+    "isPrimary": true,
+    "proficiency": "expert",
+    "experience": 5,
+    "lastUsage": 2023
+  },
+  {
+    "id": 3,
+    "name": "redux",
+    "kind": "hard",
+    "category": "lybrary",
+    "isPrimary": true,
+    "proficiency": "advanced",
+    "experience": 5,
+    "lastUsage": 2023
+  },
+  {
+    "id": 4,
+    "name": "node.js",
+    "kind": "hard",
+    "category": "tool",
+    "isPrimary": true,
+    "proficiency": "intermediate",
+    "experience": 3,
+    "lastUsage": 2023
+  },
+  {
+    "id": 5,
+    "name": "unit testing",
+    "kind": "hard",
+    "category": "approach",
+    "isPrimary": true,
+    "proficiency": "intermediate",
+    "experience": 3,
+    "lastUsage": 2023
+  },
+  {
+    "id": 6,
+    "name": "integration testing",
+    "kind": "hard",
+    "category": "approach",
+    "isPrimary": true,
+    "proficiency": "intermediate",
+    "experience": 3,
+    "lastUsage": 2023
+  },
+  {
+    "id": 7,
+    "name": "git",
+    "kind": "hard",
+    "category": "tool",
+    "isPrimary": true,
+    "proficiency": "advanced",
+    "experience": 7,
+    "lastUsage": 2023
+  },
+  {
+    "id": 8,
+    "name": "webpack",
+    "kind": "hard",
+    "category": "tool",
+    "isPrimary": true,
+    "proficiency": "intermediate",
+    "experience": 5,
+    "lastUsage": 2023
+  }
+]
