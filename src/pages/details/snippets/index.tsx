@@ -10,7 +10,9 @@ const Snippets = () => {
 
   useEffect(() => {
     const fetchSnippets = async () => {
-      const snippetsPromise = await fetch('http://localhost:3001/api/snippets');
+      const snippetsPromise = await fetch(
+        'https://raw.githubusercontent.com/robzarel/features/main/src/server/db/snippets.json'
+      );
 
       const parsed = await snippetsPromise.json();
       setSnippets(parsed);

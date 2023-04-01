@@ -18,10 +18,14 @@ const Experience = () => {
   useEffect(() => {
     const fetchData = async () => {
       // todo: make all request parallel
-      const fetchedExp = await fetch('http://localhost:3001/api/experience');
-      const fetchedSkills = await fetch('http://localhost:3001/api/skills');
+      const fetchedExp = await fetch(
+        'https://raw.githubusercontent.com/robzarel/features/main/src/server/db/experience.json'
+      );
+      const fetchedSkills = await fetch(
+        'https://raw.githubusercontent.com/robzarel/features/main/src/server/db/skills.json'
+      );
       const fetchedEducation = await fetch(
-        'http://localhost:3001/api/education'
+        'https://raw.githubusercontent.com/robzarel/features/main/src/server/db/education.json'
       );
 
       const parsedExp: EXPERIENCE[] = await fetchedExp.json();

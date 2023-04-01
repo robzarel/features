@@ -11,7 +11,9 @@ const Solutions = () => {
 
   useEffect(() => {
     const fetchSnippets = async () => {
-      const fetched = await fetch('http://localhost:3001/api/solutions');
+      const fetched = await fetch(
+        'https://raw.githubusercontent.com/robzarel/features/main/src/server/db/solutions.json'
+      );
       const parsed = await fetched.json();
       setSolutions(parsed);
     };
