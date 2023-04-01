@@ -24,8 +24,9 @@
   border: 6px solid rgb(var(--text-primary));
   margin-left: auto;
   border-radius: 50%;
-  background-image: url('http://placekitten.com/160/160');
-  box-sizing: border-box;
+  background-image: url('./images/me.jpeg');
+  background-position: center;
+  background-size: cover;
 }
 .contacts {
   display: flex;
