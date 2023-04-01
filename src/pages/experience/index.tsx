@@ -43,7 +43,7 @@ const Experience = () => {
   return (
     <div className={Styles.wrapper}>
       <div className={Styles.leftColumn}>
-        <h2 className={Styles.title}>Work Experience !!!!</h2>
+        <h2 className={Styles.title}>Work Experience !!!!5</h2>
         {experience.map((item) => (
           <WorkExperience key={item.id} {...item} />
         ))}
