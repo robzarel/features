@@ -5,11 +5,11 @@ on:
     branches:
       - main
     paths:
-      - './**'
+      - '/'
 
 defaults:
   run:
-    working-directory: ./
+    working-directory: /
 
 jobs:
   build:
