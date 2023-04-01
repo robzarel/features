@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../../api';
 
 import WorkExperience from '../../components/experience';
-import Skills from '../../components/skills';
+import Skill from '../../components/skill';
 import Education from '../../components/education';
 
 import EXPERIENCE from '../../types/entities/experience';
@@ -39,7 +39,7 @@ const Experience = () => {
   return (
     <div className={Styles.wrapper}>
       <div className={Styles.leftColumn}>
-        <h2 className={Styles.title}>Work Experience!!!</h2>
+        <h2 className={Styles.title}>Work Experience</h2>
         {experience.map((item) => (
           <WorkExperience key={item.id} {...item} />
         ))}
@@ -47,11 +47,15 @@ const Experience = () => {
       <div className={Styles.rightColumn}>
         <div className={Styles.skills}>
           <h2 className={Styles.title}>Skills</h2>
-          <Skills data={skills} />
+          {skills.map((item) => (
+            <Skill key={item.id} {...item} />
+          ))}
         </div>
         <div className={Styles.education}>
           <h2 className={Styles.title}>Education</h2>
-          <Education data={education} />
+          {education.map((item) => (
+            <Education key={item.id} {...item} />
+          ))}
         </div>
       </div>
     </div>
