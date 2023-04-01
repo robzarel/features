@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Layout from '../components/layout';
 
+import Home from './home';
 import Experience from './experience';
 import Search from './search';
 import Contacts from './contacts';
@@ -16,7 +17,8 @@ const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
-        <Route path='/' element={<Experience />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/experience' element={<Experience />} />
         <Route path='/search' element={<Search />} />
         <Route path='/contacts' element={<Contacts />} />
         <Route path='/project/:id' element={<Project />} />

@@ -65,3 +65,9 @@ html[data-theme='dark'] .ball {
     )
   );
 }
+
+@media print {
+  .simpleToggler {
+    display: none;
+  }
+}

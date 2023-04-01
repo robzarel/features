@@ -18,3 +18,9 @@
 .listItem.active {
   background-color: red;
 }
+
+@media print {
+  .list {
+    display: none;
+  }
+}

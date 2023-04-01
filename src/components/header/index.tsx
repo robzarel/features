@@ -4,6 +4,7 @@ import Theme from '../theme-provider';
 import SocialLink from '../social-link';
 
 import Styles from './index.module.css';
+import Photo from './images/me.jpeg';
 
 const Header = () => {
   return (
@@ -48,7 +49,9 @@ const Header = () => {
           />
         </div>
       </div>
-      <div className={Styles.photo} />
+      <div className={Styles.photo}>
+        <img className={Styles.img} src={Photo} alt='photo' />
+      </div>
     </div>
   );
 };

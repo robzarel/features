@@ -17,6 +17,7 @@
   color: rgb(var(--text-primary));
 }
 .photo {
+  display: flex;
   position: absolute;
   right: 10px;
   width: 160px;
@@ -27,6 +28,9 @@
   background-image: url('./images/me.jpeg');
   background-position: center;
   background-size: cover;
+}
+.img {
+  border-radius: 50%;
 }
 .contacts {
   display: flex;

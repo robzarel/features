@@ -13,6 +13,9 @@ const Navigation = (props: Props) => {
   return (
     <div className={Styles.list} data-mode={mode}>
       <NavLink className={Styles.listItem} to='/'>
+        home
+      </NavLink>
+      <NavLink className={Styles.listItem} to='/experience'>
         experience
       </NavLink>
       <NavLink className={Styles.listItem} to='/search'>
