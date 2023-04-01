@@ -14,7 +14,7 @@
 .info {
 }
 .role {
-  color: rgb(var(--text-primary));
+  color: rgb(var(--accent));
 }
 .photo {
   display: flex;
@@ -22,22 +22,14 @@
   right: 10px;
   width: 160px;
   height: 160px;
-  border: 6px solid rgb(var(--text-primary));
+  border: 6px solid rgb(var(--accent));
   margin-left: auto;
   border-radius: 50%;
   background-image: url('./images/me.jpeg');
   background-position: center;
   background-size: cover;
+  box-sizing: border-box;
 }
 .img {
   border-radius: 50%;
-}
-.contacts {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  row-gap: 5px;
-}
-.link {
-  width: 50%;
 }

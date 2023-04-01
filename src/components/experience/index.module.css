@@ -17,7 +17,7 @@
 }
 .period {
   margin: 0;
-  color: rgb(var(--text-primary));
+  color: rgb(var(--accent));
   font-style: italic;
   font-size: 12px;
 }
@@ -25,7 +25,7 @@
   margin: 0;
   display: flex;
   margin-left: auto;
-  color: rgb(var(--text-primary));
+  color: rgb(var(--accent));
   font-style: italic;
   font-size: 16px;
 }
@@ -42,7 +42,7 @@
 .achievementsList {
   padding: 0;
   margin: 0;
-  color: rgb(var(--text-primary));
+  color: rgb(var(--accent));
   padding-left: 15px;
 }
 .achievementsItem {

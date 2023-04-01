@@ -9,8 +9,8 @@
   width: var(--toggler-width);
   border-radius: var(--toggler-width);
   padding: var(--toggler-padding);
-  background-color: rgb(var(--bg-primary));
-  border: var(--toggler-padding) solid rgb(var(--text-primary));
+  background-color: rgb(var(--background));
+  border: var(--toggler-padding) solid rgb(var(--accent));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,7 +49,7 @@
   z-index: 1;
   width: var(--ball-diameter);
   height: var(--ball-diameter);
-  background-color: rgba(var(--text-primary), 1);
+  background-color: rgba(var(--accent), 1);
   border-radius: 50%;
   transition: transform 0.2s linear, backgroundColor 0.2s ease;
 }

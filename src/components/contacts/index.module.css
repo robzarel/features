@@ -1,0 +1,9 @@
+.contacts {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  row-gap: 5px;
+}
+.link {
+  width: 50%;
+}
