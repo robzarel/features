@@ -1,15 +1,13 @@
-import { Snippet } from 'react-code-blocks';
-
 type Snippet = {
   id: number;
+  name: string;
+  description: string;
   category: {
     id: number;
     name: string;
   };
   code: string;
   language: string;
-  name: string;
-  description: string;
 };
 
 export default Snippet;

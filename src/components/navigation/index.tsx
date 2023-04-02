@@ -18,12 +18,6 @@ const Navigation = (props: Props) => {
       <NavLink className={Styles.listItem} to='/experience'>
         experience
       </NavLink>
-      <NavLink className={Styles.listItem} to='/search'>
-        search
-      </NavLink>
-      <NavLink className={Styles.listItem} to='/contacts'>
-        contacts
-      </NavLink>
     </div>
   );
 };

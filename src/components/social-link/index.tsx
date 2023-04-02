@@ -6,6 +6,7 @@ import mail from './images/mail.svg';
 import telegram from './images/telegram.svg';
 import linkedin from './images/linkedin.svg';
 import facebook from './images/facebook.svg';
+import check from './images/check.svg';
 
 const map = {
   mail: mail,
@@ -24,7 +25,8 @@ const SocialLink = ({ href, text, network }: Props) => {
 
   const handleCopyClick = () => {
     if (!wasCopied) {
-      navigator.clipboard.writeText(href);
+      const copy = href.replace('mailto:', '');
+      navigator.clipboard.writeText(copy);
 
       setWasCopied(true);
       setTimeout(() => {
@@ -34,17 +36,17 @@ const SocialLink = ({ href, text, network }: Props) => {
   };
 
   const title = wasCopied ? 'Copied!' : 'Copy to clipboard';
+  const icon = wasCopied ? check : map[network];
 
   return (
     <div className={Styles.wrapper}>
-      {/* <div
+      <img
         className={Styles.icon}
-        data-type={network}
-        data-checked={wasCopied}
-        onClick={handleCopyClick}
+        src={icon}
+        alt=''
         title={title}
-      /> */}
-      <img className={Styles.icon} src={map[network]} alt='' />
+        onClick={handleCopyClick}
+      />
       <a
         className={Styles.link}
         href={href}

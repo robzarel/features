@@ -30,7 +30,7 @@ const Contacts = () => {
       </div>
       <div className={Styles.link}>
         <SocialLink
-          href='https://t.me/rob_zarel'
+          href='https://www.t.me/rob_zarel'
           text='@rob_zarel'
           network='telegram'
         />

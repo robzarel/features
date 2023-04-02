@@ -9,7 +9,7 @@
   width: 100%;
   max-width: 1182px;
   padding: 5px 10px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .header,
@@ -47,7 +47,7 @@
 
 .footer {
   flex: 0 1 auto;
-  background-color: rgba(0, 56, 83, 0.5);
+  background-color: rgba(var(--background-accent), 0.9);
 }
 
 @media print {
