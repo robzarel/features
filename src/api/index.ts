@@ -4,7 +4,7 @@ const get = async <T>(endpoint: ENDPOINTS): Promise<T> => {
   const path =
     process.env.NODE_ENV === 'development'
       ? `http://localhost:3001/api/${endpoint}`
-      : `https://raw.githubusercontent.com/robzarel/features/main/src/server/db/${endpoint}.json`;
+      : `https://raw.githubusercontent.com/robzarel/features/gh-pages/static/db/${endpoint}.json`;
 
   const response = await fetch(path);
   return await response.json();

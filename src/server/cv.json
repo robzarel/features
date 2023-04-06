@@ -1,0 +1,241 @@
+{
+  "experience": [
+    {
+      "id": 0,
+      "kind": "development",
+      "role": "Senior frontend developer",
+      "company": "Tinkoff Journal",
+      "city": "izhevsk",
+      "country": "russia",
+      "abstract": "Russia's largest online magazine about money (20 millions visits per month)",
+      "achievements": [
+        "frontend app architecture design for content editors (back-office)",
+        "creation of scalable forms validation system",
+        "implementing of unit/integration tests across modules/user scenarios. "
+      ],
+      "description": "some full detailed description of the role, tasks and acievements",
+      "started": "2022.10.24",
+      "ended": "2023.03.06",
+      "projects": [],
+      "features": []
+    },
+    {
+      "id": 1,
+      "kind": "management",
+      "role": "Director of Resource Management Department",
+      "company": "High Technologies Center",
+      "city": "izhevsk",
+      "country": "russia",
+      "abstract": "Full cycle custom development company",
+      "achievements": [
+        "30% company's production headcount growth in 2 years (140 -> 200ppl)",
+        "ugrading of competence matrix for resource manager",
+        "5% employee utilization growth due to upgrading the resource planning system"
+      ],
+      "description": "some full detailed description of the role, tasks and acievements",
+      "started": "2020.01.01",
+      "ended": "2022.10.21",
+      "projects": [],
+      "features": []
+    },
+    {
+      "id": 2,
+      "kind": "management",
+      "role": "Resource manager of frontend department",
+      "company": "High Technologies Center",
+      "city": "izhevsk",
+      "country": "russia",
+      "abstract": "Full cycle custom development company",
+      "achievements": [
+        "100% department headcount growth in 1.5 year (15 -> 30ppl)",
+        "creation of learning program for junior developers",
+        "hiring, onboarding, assessment, motivation and retention of specialists."
+      ],
+      "description": "some full detailed description of the role, tasks and acievements",
+      "started": "2018.06.01",
+      "ended": "2019.12.31",
+      "projects": [],
+      "features": []
+    },
+    {
+      "id": 3,
+      "kind": "development",
+      "role": "Senior Frontend Engineer",
+      "company": "High Technologies Center",
+      "city": "izhevsk",
+      "country": "russia",
+      "abstract": "Full cycle custom development company",
+      "achievements": [
+        "development credit card obtaining web app in 'Alfabank'. Product took the top 3 places for 3 years in a row by all of the Russian banks",
+        "designed and write from scratch web media player (based on video.js). Player is currently used by 'CTC Media' holding (ctc.ru)",
+        "hiring, onboarding, assessment, motivation and retention of specialists."
+      ],
+      "description": "some full detailed description of the role, tasks and acievements",
+      "started": "2017.07.01",
+      "ended": "2019.12.31",
+      "projects": [],
+      "features": []
+    },
+    {
+      "id": 4,
+      "kind": "development",
+      "role": "Frontend Engineer",
+      "company": "High Technologies Center",
+      "city": "izhevsk",
+      "country": "russia",
+      "abstract": "Full cycle custom development company",
+      "achievements": [
+        "development of an app for personal finance management in 'Alfabank'. The app is build in in one of the largest internet banks",
+        "development of an photo contest app in role of a full-stack developer",
+        "development of an 'videomore' smartTV app",
+        "development of an corporate reference book (desktop app)"
+      ],
+      "description": "some full detailed description of the role, tasks and acievements",
+      "started": "2015.02.11",
+      "ended": "2017.07.31",
+      "projects": [],
+      "features": []
+    }
+  ],
+  "skills": [
+    {
+      "id": 0,
+      "name": "typescript",
+      "kind": "hard",
+      "category": "language",
+      "isPrimary": true,
+      "proficiency": "advanced",
+      "experience": 3,
+      "lastUsage": 2023
+    },
+    {
+      "id": 1,
+      "name": "javascript",
+      "kind": "hard",
+      "category": "language",
+      "isPrimary": true,
+      "proficiency": "expert",
+      "experience": 7,
+      "lastUsage": 2023
+    },
+    {
+      "id": 2,
+      "name": "react",
+      "kind": "hard",
+      "category": "lybrary",
+      "isPrimary": true,
+      "proficiency": "expert",
+      "experience": 5,
+      "lastUsage": 2023
+    },
+    {
+      "id": 3,
+      "name": "redux",
+      "kind": "hard",
+      "category": "lybrary",
+      "isPrimary": true,
+      "proficiency": "advanced",
+      "experience": 5,
+      "lastUsage": 2023
+    },
+    {
+      "id": 4,
+      "name": "node.js",
+      "kind": "hard",
+      "category": "tool",
+      "isPrimary": true,
+      "proficiency": "intermediate",
+      "experience": 3,
+      "lastUsage": 2023
+    },
+    {
+      "id": 5,
+      "name": "unit testing",
+      "kind": "hard",
+      "category": "approach",
+      "isPrimary": true,
+      "proficiency": "intermediate",
+      "experience": 3,
+      "lastUsage": 2023
+    },
+    {
+      "id": 6,
+      "name": "integration testing",
+      "kind": "hard",
+      "category": "approach",
+      "isPrimary": true,
+      "proficiency": "intermediate",
+      "experience": 3,
+      "lastUsage": 2023
+    },
+    {
+      "id": 7,
+      "name": "git",
+      "kind": "hard",
+      "category": "tool",
+      "isPrimary": true,
+      "proficiency": "advanced",
+      "experience": 7,
+      "lastUsage": 2023
+    },
+    {
+      "id": 8,
+      "name": "webpack",
+      "kind": "hard",
+      "category": "tool",
+      "isPrimary": true,
+      "proficiency": "intermediate",
+      "experience": 5,
+      "lastUsage": 2023
+    },
+    {
+      "id": 9,
+      "name": "hapi.js",
+      "kind": "hard",
+      "category": "framework",
+      "isPrimary": false,
+      "proficiency": "novice",
+      "experience": 1,
+      "lastUsage": 2019
+    },
+    {
+      "id": 10,
+      "name": "react-router",
+      "kind": "hard",
+      "category": "lybrary",
+      "isPrimary": true,
+      "proficiency": "advanced",
+      "experience": 5,
+      "lastUsage": 2023
+    }
+  ],
+  "education": [
+    {
+      "id": 0,
+      "degree": "Bachalor of engineering",
+      "univercity": "Izhevsk State Technical University",
+      "started": "2009.09.01",
+      "ended": "2013.06.30",
+      "city": "izhevsk",
+      "country": "russia"
+    },
+    {
+      "id": 1,
+      "degree": "Master of engineering",
+      "univercity": "Izhevsk State Technical University",
+      "started": "2013.09.01",
+      "ended": "2015.06.30",
+      "city": "izhevsk",
+      "country": "russia"
+    },
+    {
+      "id": 2,
+      "degree": "Master of Translation and Interpreting (german)",
+      "univercity": "Izhevsk State Technical University",
+      "started": "2009.09.01",
+      "ended": "2015.06.30",
+      "city": "izhevsk",
+      "country": "russia"
+    }
+  ]
+}
