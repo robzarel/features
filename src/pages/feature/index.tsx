@@ -12,17 +12,21 @@ type ReadmeItem = FeatureType['readme'][number];
 
 const README_RENDER_FUNCTION = {
   heading: ({ content }: ReadmeItem) => (
-    <p className={Styles.heading}>{content}</p>
+    <p className={Styles.heading}>{`${decodeURIComponent(content)}`}</p>
   ),
-  text: ({ content }: ReadmeItem) => <p className={Styles.text}>{content}</p>,
+  text: ({ content }: ReadmeItem) => (
+    <p className={Styles.text}>{decodeURIComponent(content)}</p>
+  ),
   code: ({ content, language }: ReadmeItem) => (
-    <CodeBlock
-      code={decodeURI(content)}
-      language={language}
-      showLineNumbers={true}
-      startingLineNumber={1}
-      theme={dracula}
-    />
+    <div className={Styles.code}>
+      <CodeBlock
+        text={decodeURIComponent(content)}
+        language={language}
+        showLineNumbers={true}
+        startingLineNumber={1}
+        theme={dracula}
+      />
+    </div>
   ),
 };
 
@@ -33,6 +37,7 @@ const Feature = () => {
   useEffect(() => {
     const fetchFeature = async (id: number) => {
       const data = await api.get.feature(id);
+      console.log('data', data);
 
       setFeatures(data);
     };
@@ -42,9 +47,12 @@ const Feature = () => {
 
   return (
     <div>
-      {feature?.readme.map((item, index) => {
-        return <div key={index}>{README_RENDER_FUNCTION[item.type](item)}</div>;
-      })}
+      {feature &&
+        feature.readme.map((item, index) => {
+          return (
+            <div key={index}>{README_RENDER_FUNCTION[item.type](item)}</div>
+          );
+        })}
     </div>
   );
 };

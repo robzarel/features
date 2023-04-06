@@ -30,7 +30,6 @@ const SnippetPage = () => {
           language={snippet.language}
           name={snippet.name}
           description={snippet.description}
-          category={snippet.category}
         />
       )}
     </div>

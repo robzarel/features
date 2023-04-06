@@ -59,3 +59,22 @@
   box-sizing: border-box;
   border: 1px solid black;
 }
+.results,
+.resultHeading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+}
+.projects,
+.features,
+.snippets,
+.resultTitle {
+  flex: 30%;
+}
+
+.resultHeading {
+  color: rgb(var(--accent));
+  font-size: 24px;
+}

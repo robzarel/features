@@ -7,27 +7,12 @@
 }
 
 .content {
-  display: none;
+  display: flex;
   width: 100%;
   gap: 10px;
 }
-.content[data-is-visible='true'] {
-  display: flex;
-}
-
-.code {
-  width: 60%;
-}
-
-.category {
-  width: 40%;
-}
 
 .meta {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  width: 100%;
   margin-bottom: 5px;
 }
 .name,

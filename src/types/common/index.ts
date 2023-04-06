@@ -9,10 +9,8 @@ type CV = {
 };
 
 type RELATED = {
-  type: 'project' | 'feature' | 'solution' | 'snippet';
+  type: 'project' | 'feature' | 'snippet';
   id: number;
-  name: string;
-  description: string;
 };
 
 export type { RELATED, CV };

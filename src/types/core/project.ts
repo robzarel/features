@@ -13,7 +13,6 @@ type PROJECT = {
   role: ROLE;
   team: ROLE[];
   stack: Pick<SKILL, 'id' | 'kind' | 'name' | 'category'>[];
-  features: string[];
   related: RELATED[];
 };
 

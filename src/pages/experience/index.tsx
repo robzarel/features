@@ -48,3 +48,4 @@ const Experience = () => {
 };
 
 export default Experience;
+//todo: подумать над тем, чтобы сделать скиллы кликабельными

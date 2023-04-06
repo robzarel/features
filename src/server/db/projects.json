@@ -4,14 +4,55 @@
     "name": "Tinkoff Journal",
     "description": "Russia's largest online magazine about money (20 millions visits per month)",
 
-    "started": "",
-    "ended": "",
-    "goal": "",
-    "role": "",
-    "team": "",
-    "stack": "",
-    "features": "",
-    "related": ""
+    "started": "2022.10.24",
+    "ended": "2023.03.06",
+    "goal": "Создание административной панели управления контентом",
+    "role": {
+      "kind": "body",
+      "stream": "prod",
+      "title": "Frontend",
+      "grade": "senior"
+    },
+    "team": [
+      {
+        "kind": "head",
+        "stream": "nonprod",
+        "title": "Product Owner"
+      },
+      {
+        "kind": "body",
+        "stream": "prod",
+        "title": "Frontend",
+        "grade": "senior"
+      },
+      {
+        "kind": "body",
+        "stream": "prod",
+        "title": "Quality assurance",
+        "grade": "middle"
+      },
+      {
+        "kind": "body",
+        "stream": "prod",
+        "title": "Designer",
+        "grade": "senior"
+      }
+    ],
+    "stack": [
+      {
+        "id": 0,
+        "name": "typescript",
+        "kind": "hard",
+        "category": "language"
+      },
+      {
+        "id": 2,
+        "name": "react",
+        "kind": "hard",
+        "category": "lybrary"
+      }
+    ],
+    "related": []
   },
   {
     "id": 1,
@@ -131,8 +172,7 @@
         "category": "lybrary"
       }
     ],
-    "features": "",
-    "related": ""
+    "related": []
   },
   {
     "id": 2,
@@ -145,7 +185,6 @@
     "role": "",
     "team": "",
     "stack": "",
-    "features": "",
-    "related": ""
+    "related": []
   }
 ]

@@ -76,9 +76,7 @@ Theme.SimpleToggler = function SimpleToggler() {
 
   return (
     <div className={Styles.simpleToggler} onClick={handleSwitchTheme}>
-      <div className={Styles.moon} />
-      <div className={Styles.sun} />
-      <div className={Styles.ball} />
+      <div className={Styles.ball} data-theme={theme} />
     </div>
   );
 };

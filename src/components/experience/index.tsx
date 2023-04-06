@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Styles from './index.module.css';
 import EXPERIENCE from '../../types/secondary/experience';
 
 import { toUserFormat, capitalize } from '../../utils';
 
-// todo: придумать стоит ли давать кнопку на раскрытие доп информации или просто увести на отдельную страницу с детальными описанием опыта за этот период (пока кажется нужна отдельная страница и там детальки по формату моему)
+import Styles from './index.module.css';
+
 type Props = EXPERIENCE;
 const ExperienceItem = (props: Props) => {
   const { role, city, country, started, ended, company, achievements } = props;

@@ -22,11 +22,15 @@ import type { CV, RELATED } from '../types/common';
 import type SNIPPET from '../types/core/snippet';
 import type PROJECT from '../types/core/project';
 import type FEAUTRE from '../types/core/feature';
+type COMMON = RELATED & {
+  name: string;
+  description: string;
+};
 
 type API = {
   get: {
     cv: () => Promise<CV>;
-    common: () => Promise<RELATED[]>;
+    common: () => Promise<COMMON[]>;
     snippet: (id: number) => Promise<SNIPPET | undefined>;
     project: (id: number) => Promise<PROJECT | undefined>;
     feature: (id: number) => Promise<FEAUTRE | undefined>;
@@ -36,11 +40,11 @@ type API = {
 const api: API = {
   get: {
     cv: () => get<CV>('cv'),
-    common: () => get<RELATED[]>('common'),
+    common: () => get<COMMON[]>('common'),
     snippet: (id) => getById<SNIPPET>('snippets', id),
     project: (id) => getById<PROJECT>('projects', id),
     feature: (id) => getById<FEAUTRE>('features', id),
   },
 };
-
+export type { COMMON };
 export default api;

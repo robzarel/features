@@ -9,7 +9,7 @@
     "abstract": "migrating frontend apps to cloud",
     "achievements": [
       "preparing fronendapps to migration to the azure cloud",
-      "desctop application: fdc3 demo app"
+      "desktop application: fdc3 demo app"
     ],
     "description": "some full detailed description of the role, tasks and acievements",
     "started": "2023.03.09",
@@ -31,7 +31,11 @@
     "description": "some full detailed description of the role, tasks and acievements",
     "started": "2022.10.24",
     "ended": "2023.03.06",
-    "related": []
+    "related": [
+      { "type": "project", "id": 0 },
+      { "type": "feature", "id": 0 },
+      { "type": "feature", "id": 1 }
+    ]
   },
   {
     "id": 3,
