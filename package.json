@@ -22,10 +22,10 @@
   "scripts": {
     "start": "react-scripts start",
     "serve": "json-server  --routes ./src/server/routes.json --port 3001 --watch ./src/server/db/index.js",
-    "build": "react-scripts build",
+    "build": "react-scripts build && shx cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix --ext .tsx --ignore-path .gitignore .",
+    "lint": "eslint --fix --ignore-path .gitignore .",
     "predeploy": "rm -rf build && npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -70,6 +70,7 @@
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.4",
     "react-code-blocks": "^0.0.9-0",
+    "shx": "^0.3.4",
     "simple-git-hooks": "^2.8.1",
     "typescript-plugin-css-modules": "^4.2.3"
   }

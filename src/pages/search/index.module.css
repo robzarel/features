@@ -52,3 +52,10 @@
 .development {
   flex-grow: 1;
 }
+
+.item {
+  margin: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}

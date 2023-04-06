@@ -1,20 +1,35 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
 
-const experience = require('./experience.json');
 const projects = require('./projects.json');
 const features = require('./features.json');
-const solutions = require('./solutions.json');
 const snippets = require('./snippets.json');
+
+const experience = require('./experience.json');
 const skills = require('./skills.json');
 const education = require('./education.json');
 
+const extractData = ({ data, type }) =>
+  data.map((item) => ({
+    type: type,
+    id: item.id,
+    name: item.name,
+    description: item.description,
+  }));
+const arr = [
+  { type: 'project', data: projects },
+  { type: 'feature', data: features },
+  { type: 'snippet', data: snippets },
+];
+
 module.exports = () => ({
-  experience: experience,
+  cv: {
+    experience: experience,
+    skills: skills,
+    education: education,
+  },
+  common: arr.reduce((acc, current) => [...acc, ...extractData(current)], []),
   projects: projects,
   features: features,
-  solutions: solutions,
   snippets: snippets,
-  skills: skills,
-  education: education,
 });

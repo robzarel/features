@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Styles from './index.module.css';
-import EXPERIENCE from '../../types/entities/experience';
+import EXPERIENCE from '../../types/secondary/experience';
 
 import { toUserFormat, capitalize } from '../../utils';
 

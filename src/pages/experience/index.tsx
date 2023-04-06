@@ -6,31 +6,18 @@ import WorkExperience from '../../components/experience';
 import Skill from '../../components/skill';
 import Education from '../../components/education';
 
-import EXPERIENCE from '../../types/entities/experience';
-import SKILL from '../../types/core/skill';
-import EDUCATION from '../../types/core/education';
+import type { CV } from '../../types/common';
 
 import Styles from './index.module.css';
 
 const Experience = () => {
-  const [experience, setExperience] = useState<EXPERIENCE[]>([]);
-  const [skills, setSkills] = useState<SKILL[]>([]);
-  const [education, setEducation] = useState<EDUCATION[]>([]);
+  const [cv, setCv] = useState<CV>();
 
   useEffect(() => {
     const fetchData = async () => {
-      // todo: make all request parallel
-      const fetchedExp = await api.get.experience();
-      const fetchedSkills = await api.get.skills();
-      const fetchedEducation = await api.get.education();
+      const data = await api.get.cv();
 
-      const parsedExp: EXPERIENCE[] = await fetchedExp.json();
-      const parsedSkills: SKILL[] = await fetchedSkills.json();
-      const parsedEducation: EDUCATION[] = await fetchedEducation.json();
-
-      setExperience(parsedExp);
-      setSkills(parsedSkills);
-      setEducation(parsedEducation);
+      setCv(data);
     };
 
     fetchData();
@@ -40,22 +27,20 @@ const Experience = () => {
     <div className={Styles.wrapper}>
       <div className={Styles.leftColumn}>
         <h2 className={Styles.title}>Work Experience</h2>
-        {experience.map((item) => (
-          <WorkExperience key={item.id} {...item} />
-        ))}
+        {cv &&
+          cv.experience.map((item) => (
+            <WorkExperience key={item.id} {...item} />
+          ))}
       </div>
       <div className={Styles.rightColumn}>
         <div className={Styles.skills}>
           <h2 className={Styles.title}>Skills</h2>
-          {skills.map((item) => (
-            <Skill key={item.id} {...item} />
-          ))}
+          {cv && cv.skills.map((item) => <Skill key={item.id} {...item} />)}
         </div>
         <div className={Styles.education}>
           <h2 className={Styles.title}>Education</h2>
-          {education.map((item) => (
-            <Education key={item.id} {...item} />
-          ))}
+          {cv &&
+            cv.education.map((item) => <Education key={item.id} {...item} />)}
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EDUCATION from '../../types/core/education';
+import EDUCATION from '../../types/secondary/education';
 
 import Styles from './index.module.css';
 import { toUserFormat, capitalize } from '../../utils';

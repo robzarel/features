@@ -1,37 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { ChangeEvent } from 'react';
+
+import api from '../../api';
+
+import type { RELATED } from '../../types/common';
 
 import crossIcon from './images/cross.svg';
 
-import PROJECT from '../../types/entities/project';
-import FEATURE from '../../types/core/feature';
-import SOLUTION from '../../types/core/solution';
-import SNIPPET from '../../types/core/snippet';
-
 import Styles from './index.module.css';
 
-type Props = {
-  project?: PROJECT[];
-  feature?: FEATURE[];
-  solution?: SOLUTION[];
-  snippet?: SNIPPET[];
-};
-type Type = 'project' | 'feature' | 'solution' | 'snippet';
-
-const extractData = <T extends PROJECT | FEATURE | SOLUTION | SNIPPET>(
-  data: T[],
-  type: Type
-) =>
-  data.map((item) => ({
-    type: type,
-    id: item.id,
-    name: item.name,
-    description: item.description,
-  }));
-
-const Search = (props: Props) => {
+const Search = () => {
   const [search, setSearch] = useState('');
-  const { project = [], feature = [], solution = [], snippet = [] } = props;
+  const [data, setData] = useState<RELATED[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetched = await api.get.common();
+
+      setData(fetched);
+    };
+
+    fetchData();
+  }, []);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -40,7 +30,9 @@ const Search = (props: Props) => {
     setSearch('');
   };
 
-  const data = extractData(project, 'project');
+  const filtered = data.filter(({ name, description }) =>
+    `${name}${description}`.toLocaleLowerCase().includes(search)
+  );
 
   return (
     <div className={Styles.wrapper}>
@@ -50,7 +42,7 @@ const Search = (props: Props) => {
           type='text'
           onChange={handleChange}
           value={search}
-          placeholder='type value to search...'
+          placeholder='search by name or description'
         />
         <div
           className={Styles.close}
@@ -61,12 +53,20 @@ const Search = (props: Props) => {
         </div>
       </div>
       <div className={Styles.results}>
-        {data.map((item) => {
+        {filtered.map((item) => {
           return (
-            <div key={`${item.type}${item.id}`}>
-              <div>{item.id}</div>
-              <div>{item.name}</div>
-              <div>{item.description}</div>
+            <div key={`${item.type}${item.id}`} className={Styles.item}>
+              <div>
+                {item.type}, {item.id}
+              </div>
+              <div>
+                <b>name: </b>
+                {item.name}
+              </div>
+              <div>
+                <b>description: </b>
+                {item.description}
+              </div>
             </div>
           );
         })}

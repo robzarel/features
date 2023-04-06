@@ -4,16 +4,16 @@ type HardCategories =
   | 'tool'
   | 'language'
   | 'approach';
-type SoftCategories = '';
+type SoftCategories = 'methodology';
 
 type SKILL = {
   id: number;
   name: string;
   kind: 'hard' | 'soft';
   category: HardCategories | SoftCategories;
-  isPrimary: boolean;
   proficiency: 'novice' | 'intermediate' | 'advanced' | 'expert';
   experience: number;
+  isPrimary: boolean;
   lastUsage: number;
 };
 

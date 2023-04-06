@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SKILL from '../../types/core/skill';
+import SKILL from '../../types/secondary/skill';
 
 import { capitalize } from '../../utils';
 

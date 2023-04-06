@@ -1,3 +1,5 @@
+import type { RELATED } from '../common';
+
 type Snippet = {
   id: number;
   name: string;
@@ -8,6 +10,7 @@ type Snippet = {
   };
   code: string;
   language: string;
+  related?: RELATED[];
 };
 
 export default Snippet;

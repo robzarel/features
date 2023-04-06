@@ -1,4 +1,4 @@
-import type Project from './project';
+import type Project from '../core/project';
 import type Feature from '../core/feature';
 
 type Experience = {
