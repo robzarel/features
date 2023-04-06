@@ -1,5 +1,4 @@
-import type Project from '../core/project';
-import type Feature from '../core/feature';
+import type { RELATED } from '../common';
 
 type Experience = {
   id: number;
@@ -12,9 +11,8 @@ type Experience = {
   achievements: string[];
   description: string;
   started: string;
-  ended: string;
-  projects: Pick<Project, 'id' | 'name'>[];
-  features: Pick<Feature, 'id' | 'name'>[];
+  ended?: string;
+  related?: RELATED[];
 };
 
 export default Experience;

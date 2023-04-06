@@ -10,7 +10,7 @@ type Props = EXPERIENCE;
 const ExperienceItem = (props: Props) => {
   const { role, city, country, started, ended, company, achievements } = props;
   const startedFrom = toUserFormat(new Date(started));
-  const endedAt = toUserFormat(new Date(ended));
+  const endedAt = ended ? toUserFormat(new Date(ended)) : 'Now';
   const place = `${capitalize(city)}, ${capitalize(country)}`;
 
   return (

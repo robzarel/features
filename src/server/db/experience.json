@@ -1,6 +1,22 @@
 [
   {
-    "id": 0,
+    "id": 5,
+    "kind": "development",
+    "role": "Senior frontend developer",
+    "company": "Luxoft",
+    "city": "belgrade",
+    "country": "serbia",
+    "abstract": "migrating frontend apps to cloud",
+    "achievements": [
+      "preparing fronendapps to migration to the azure cloud",
+      "desctop application: fdc3 demo app"
+    ],
+    "description": "some full detailed description of the role, tasks and acievements",
+    "started": "2023.03.09",
+    "related": []
+  },
+  {
+    "id": 4,
     "kind": "development",
     "role": "Senior frontend developer",
     "company": "Tinkoff Journal",
@@ -15,11 +31,10 @@
     "description": "some full detailed description of the role, tasks and acievements",
     "started": "2022.10.24",
     "ended": "2023.03.06",
-    "projects": [],
-    "features": []
+    "related": []
   },
   {
-    "id": 1,
+    "id": 3,
     "kind": "management",
     "role": "Director of Resource Management Department",
     "company": "High Technologies Center",
@@ -34,8 +49,7 @@
     "description": "some full detailed description of the role, tasks and acievements",
     "started": "2020.01.01",
     "ended": "2022.10.21",
-    "projects": [],
-    "features": []
+    "related": []
   },
   {
     "id": 2,
@@ -53,11 +67,10 @@
     "description": "some full detailed description of the role, tasks and acievements",
     "started": "2018.06.01",
     "ended": "2019.12.31",
-    "projects": [],
-    "features": []
+    "related": []
   },
   {
-    "id": 3,
+    "id": 1,
     "kind": "development",
     "role": "Senior Frontend Engineer",
     "company": "High Technologies Center",
@@ -72,11 +85,10 @@
     "description": "some full detailed description of the role, tasks and acievements",
     "started": "2017.07.01",
     "ended": "2019.12.31",
-    "projects": [],
-    "features": []
+    "related": []
   },
   {
-    "id": 4,
+    "id": 0,
     "kind": "development",
     "role": "Frontend Engineer",
     "company": "High Technologies Center",
@@ -92,7 +104,6 @@
     "description": "some full detailed description of the role, tasks and acievements",
     "started": "2015.02.11",
     "ended": "2017.07.31",
-    "projects": [],
-    "features": []
+    "related": []
   }
 ]
