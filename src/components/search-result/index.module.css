@@ -12,3 +12,20 @@
 .details:hover {
   color: rgba(var(--background), 1);
 }
+.item {
+  border: 1px solid rgba(var(--background), 0.6);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px 5px 10px 0;
+}
+.name {
+  font-weight: bold;
+  margin: 5px 0;
+  padding: 0;
+}
+.description {
+  margin: 0;
+  padding: 0;
+  color: rgba(var(--accent), 1);
+}

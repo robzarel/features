@@ -12,9 +12,8 @@ const Snippet = (props: SnippetType) => {
   return (
     <div className={Styles.wrapper}>
       <div className={Styles.meta}>
-        <p className={Styles.name}>{`ID: ${id}`}.</p>
-        <p className={Styles.name}>{`Name: ${name}`}</p>
-        <p className={Styles.name}>{`Description: ${description}`}.</p>
+        <p className={Styles.name}>{name}</p>
+        <p className={Styles.description}>{description}</p>
       </div>
       <div className={Styles.content}>
         <div className={Styles.code}>

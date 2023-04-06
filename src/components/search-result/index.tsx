@@ -11,14 +11,10 @@ const SearchResult = (props: COMMON) => {
 
   return (
     <div key={`${type}${id}`} className={Styles.item}>
-      <div>
-        <b>name: </b>
-        {name}
-      </div>
-      <div>
-        <b>description: </b>
-        {description}
-      </div>
+      <p className={Styles.name}>
+        <b>{name}</b>
+      </p>
+      <p className={Styles.description}>{description}</p>
       <NavLink className={Styles.details} to={`/${type}/${id}`}>
         details...
       </NavLink>

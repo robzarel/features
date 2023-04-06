@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "name": "функция 'validateValue'",
+    "name": "validateValue",
     "description": "Поочерёдно запускает валидаторы для переданного значения. Если валидация прошла неуспешно, то дальнейший запуск валидаторов не происходит",
     "code": "type%20ValidationResult%20=%20string%20%7C%20null;%0Atype%20Validator%3CT%3E%20=%20(params:%20T)%20=%3E%20Promise%3CValidationResult%3E;%0Atype%20GetValidator%3COptions,%20Params%3E%20=%20(options?:%20Options)%20=%3E%20Validator%3CParams%3E;%0A%0Aconst%20validateValue%20=%20async%20%3CT%3E(%0A%20%20value:%20T,%0A%20%20validators:%20Validator%3CT%3E%5B%5D%0A):%20Promise%3CValidationResult%3E%20=%3E%20%7B%0A%20%20let%20validationResult:%20ValidationResult%20=%20null;%0A%20%20let%20i%20=%200;%0A%0A%20%20while%20(validationResult%20===%20null%20&&%20i%20%3C%20validators.length)%20%7B%0A%20%20%20%20const%20res%20=%20await%20validators%5Bi%5D(value);%0A%0A%20%20%20%20res%20&&%20(validationResult%20=%20res);%0A%20%20%20%20i++;%0A%20%20%7D%0A%0A%20%20return%20validationResult;%0A%7D;%0A%0Aexport%20type%20%7B%20ValidationResult,%20Validator,%20GetValidator%20%7D;%0A%0Aexport%20default%20validateValue;%0A",
     "language": "typescript",
@@ -9,9 +9,17 @@
   },
   {
     "id": 1,
-    "name": "валидатор 'required'",
+    "name": "required validator",
     "description": "Проверяет, является ли значение истинным",
     "code": "import%20type%20%7B%20GetValidator%20%7D%20from%20'./index';%0A%0Aconst%20required:%20GetValidator%3Cstring,%20string%3E%20=%20(message%20=%20'%D0%9E%D0%B1%D1%8F%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%B5')%20=%3E%20%7B%0A%20%20return%20async%20(value)%20=%3E%20(value%20?%20null%20:%20message);%0A%7D;%0A%0Aexport%20default%20required;",
+    "language": "typescript",
+    "related": [{ "type": "snippet", "id": 0 }]
+  },
+  {
+    "id": 2,
+    "name": "maxLength validator",
+    "description": "Проверяет, является ли значение меньше, чем максимальное установленное количество символов",
+    "code": "%0Aimport%20type%20%7B%20GetValidator%20%7D%20from%20'./index';%0A%0Aconst%20DEFAULT_MAX_CHAR_COUNT%20=%20100;%0A%0Aconst%20maxLength:%20GetValidator%3Cnumber,%20string%3E%20=%20(%0A%20%20maxCharCount%20=%20DEFAULT_MAX_CHAR_COUNT%0A)%20=%3E%20%7B%0A%20%20if%20(maxCharCount%20%3C=%200)%20%7B%0A%20%20%20%20throw%20new%20Error(%0A%20%20%20%20%20%20'%D0%92%D0%B0%D0%BB%D0%B8%D0%B4%D0%B0%D1%82%D0%BE%D1%80%20maxLength%20%D0%BE%D0%B6%D0%B8%D0%B4%D0%B0%D0%B5%D1%82%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BB%D0%B8%D0%BD%D1%8B%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8,%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D0%BB%20%7BmaxCharCount%7D'%0A%20%20%20%20);%0A%20%20%7D%0A%0A%20%20return%20async%20(value)%20=%3E%0A%20%20%20%20value.length%20%3C=%20maxCharCount%0A%20%20%20%20%20%20?%20null%0A%20%20%20%20%20%20:%20'%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2%20%D0%BD%D0%B5%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE%20%D0%BF%D1%80%D0%B5%D0%B2%D1%8B%D1%88%D0%B0%D1%82%D1%8C%20%7BmaxCharCount%7D';%0A%7D;%0A%0Aexport%20%7B%20DEFAULT_MAX_CHAR_COUNT%20%7D;%0Aexport%20default%20maxLength;%0A",
     "language": "typescript",
     "related": [{ "type": "snippet", "id": 0 }]
   }
