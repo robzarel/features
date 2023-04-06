@@ -64,5 +64,21 @@
       }
     ],
     "related": []
+  },
+  {
+    "id": 2,
+    "name": "interoperability between applications on the desktop",
+    "description": "настройка коммуникаций между десктоп прилоежниями",
+    "readme": [
+      {
+        "type": "heading",
+        "content": "Общее"
+      },
+      {
+        "type": "text",
+        "content": "fdc3 это стандарт, описывающий коммуникации между десктоп приложениями"
+      }
+    ],
+    "related": []
   }
 ]
