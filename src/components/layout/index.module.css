@@ -36,6 +36,7 @@
   height: 50px;
   flex-wrap: nowrap;
   gap: 20px;
+  padding: 0 15px;
 }
 .delimiter {
 }
