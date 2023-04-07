@@ -5,12 +5,6 @@
   flex-wrap: wrap;
 }
 
-.toggler {
-  position: absolute;
-  right: 0;
-  z-index: 10;
-}
-
 .info {
 }
 .role {

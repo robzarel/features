@@ -6,8 +6,12 @@
   width: 100%;
   display: flex;
   gap: var(--gap);
+  flex-wrap: wrap;
 }
 
+.about {
+  width: 100%;
+}
 .leftColumn {
   width: var(--left-width);
 }
@@ -19,9 +23,17 @@
 .title {
   color: rgb(var(--accent));
   width: 100%;
+  margin: 0;
 }
 
 .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.education {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

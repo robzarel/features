@@ -1,14 +1,11 @@
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
+.item {
+}
 .degree {
   margin: 2px 0;
   font-weight: bold;
-}
-.item {
 }
 .period,
 .place {

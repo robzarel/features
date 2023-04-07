@@ -4,8 +4,10 @@
   justify-content: center;
 }
 
-.siteMap {
+.contacts {
   margin-right: auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .title {

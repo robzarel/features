@@ -5,6 +5,7 @@ import api from '../../api';
 import WorkExperience from '../../components/experience';
 import Skill from '../../components/skill';
 import Education from '../../components/education';
+import About from '../../components/about';
 
 import type { CV } from '../../types/common';
 
@@ -25,6 +26,9 @@ const Experience = () => {
 
   return (
     <div className={Styles.wrapper}>
+      <div className={Styles.about}>
+        <About />
+      </div>
       <div className={Styles.leftColumn}>
         <h2 className={Styles.title}>Work Experience</h2>
         {cv &&
