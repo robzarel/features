@@ -8,15 +8,13 @@ const About = () => {
 
   return (
     <div className={Styles.wrapper}>
+      <img className={Styles.photo} src={Photo} alt='photo' />
       <div className={Styles.info}>
         <h1 className={Styles.fullName}>Boris Lazarev</h1>
         <h3 className={Styles.role}>Senior Frontend Developer</h3>
         <p className={Styles.abstract}>
           Software engineer with {workYears}+ years of experience in IT
         </p>
-      </div>
-      <div className={Styles.photo}>
-        <img className={Styles.img} src={Photo} alt='photo' />
       </div>
     </div>
   );

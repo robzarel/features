@@ -10,7 +10,7 @@
   width: var(--toggler-width);
   border-radius: var(--toggler-width);
   padding: var(--toggler-padding);
-  background-color: rgb(var(--background));
+  background-color: rgb(var(--background-primary));
   border: var(--toggler-border) solid rgb(var(--accent));
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@
   z-index: 1;
   width: var(--ball-diameter);
   height: var(--ball-diameter);
-  background-color: rgb(var(--background));
+  background-color: rgb(var(--background-primary));
   background-position: center;
   background-size: cover;
   border-radius: 50%;

@@ -1,24 +1,28 @@
 :root {
   /* light theme tokens */
-  --background-light: 44, 191, 170;
-  --background-accent-light: 41, 170, 148;
+  --background-primary-light: 44, 191, 170;
+  --background-primary-accent-light: 41, 170, 148;
+  --background-secondary-light: 255, 255, 255;
   --accent-light: 37, 89, 88;
 
   /* dark theme tokens */
-  --background-dark: 25, 48, 66;
-  --background-accent-dark: 18, 35, 45;
+  --background-primary-dark: 25, 48, 66;
+  --background-primary-accent-dark: 18, 35, 45;
+  --background-secondary-dark: 224, 230, 230;
   --accent-dark: 90, 182, 204;
 }
 
 /* map tokens to proper theme */
 [data-theme='light'] {
-  --background: var(--background-light);
-  --background-accent: var(--background-accent-light);
+  --background-primary: var(--background-primary-light);
+  --background-primary-accent: var(--background-primary-accent-light);
+  --background-secondary: var(--background-secondary-light);
   --accent: var(--accent-light);
 }
 
 [data-theme='dark'] {
-  --background: var(--background-dark);
-  --background-accent: var(--background-accent-dark);
+  --background-primary: var(--background-primary-dark);
+  --background-primary-accent: var(--background-primary-accent-dark);
+  --background-secondary: var(--background-secondary-dark);
   --accent: var(--accent-dark);
 }

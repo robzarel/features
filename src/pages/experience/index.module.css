@@ -11,19 +11,18 @@
 
 .about {
   width: 100%;
+  margin-bottom: 15px;
 }
 .leftColumn {
-  width: var(--left-width);
-}
-.rightColumn {
-  margin-left: auto;
-  width: calc(100% - var(--gap) - var(--left-width));
+  /* width: var(--left-width); */
+  min-width: 360px;
+  max-width: 567px;
 }
 
 .title {
   color: rgb(var(--accent));
   width: 100%;
-  margin: 0;
+  margin: 0 0 15px 0;
 }
 
 .skills {
@@ -37,4 +36,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+@media screen and (min-width: 780px) {
+  .rightColumn {
+    margin-left: auto;
+    width: calc(100% - var(--gap) - var(--left-width));
+  }
 }

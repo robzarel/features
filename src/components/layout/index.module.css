@@ -27,7 +27,7 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   flex: 0 1 auto;
-  background-color: rgba(var(--background), 0.9);
+  background-color: rgba(var(--background-primary), 0.9);
 }
 .content {
   display: flex;
@@ -46,29 +46,29 @@
   width: 100%;
 }
 .about {
-  background-color: rgba(var(--background), 0.9);
+  background-color: rgba(var(--background-primary), 0.9);
   padding: 20px 0;
 }
 .contacts {
-  background-color: rgba(var(--background-accent), 0.9);
+  background-color: rgba(var(--background-primary-accent), 0.9);
   padding: 10px 0;
 }
 
 .main {
   flex: 1 1 auto;
-  background-color: white;
+  background-color: rgba(var(--background-secondary), 0.5);
   color: black;
 }
 
 .footer {
   flex: 0 1 auto;
-  background-color: rgba(var(--background-accent), 0.9);
+  background-color: rgba(var(--background-primary-accent), 0.9);
 }
 
 @media print {
   /* TODO: этот оверлей для принтинга затеняет весь контент */
   .header {
-    box-shadow: inset 0 0 0 1000px rgba(var(--background), 0.9);
+    box-shadow: inset 0 0 0 1000px rgba(var(--background-primary), 0.9);
   }
   .footer {
     display: none;

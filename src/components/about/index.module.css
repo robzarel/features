@@ -3,27 +3,42 @@
   display: flex;
   position: relative;
   flex-wrap: wrap;
+  padding: 15px 0;
 }
 
 .info {
+  text-align: center;
+  width: 100%;
 }
+
 .role {
   color: rgb(var(--accent));
 }
 .photo {
   display: flex;
-  position: absolute;
-  right: 10px;
-  width: 160px;
   height: 160px;
   border: 6px solid rgb(var(--accent));
-  margin-left: auto;
+  margin: auto;
   border-radius: 50%;
-  background-image: url('./images/me.jpeg');
+  background-image: url(http://localhost:3000/features/static/media/me.f992154….jpeg);
   background-position: center;
   background-size: cover;
   box-sizing: border-box;
 }
 .img {
   border-radius: 50%;
+}
+@media screen and (min-width: 576px) {
+  .wrapper {
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+  }
+  .info {
+    text-align: left;
+  }
+
+  .photo {
+    margin-left: auto;
+    margin-right: 100px;
+  }
 }
