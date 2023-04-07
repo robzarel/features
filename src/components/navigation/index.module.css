@@ -12,8 +12,13 @@
 }
 
 .listItem {
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
+  font-size: 25px;
+}
+
+.listItem:hover {
+  color: rgba(255, 255, 255, 1);
 }
 .listItem.active {
   background-color: red;

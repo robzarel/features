@@ -37,14 +37,12 @@ const Feature = () => {
   const { id } = useParams();
   const { theme } = useTheme();
   const codeTheme = theme === 'dark' ? solarizedDark : solarizedLight;
-  const {
-    state: { related },
-  } = useLocation();
+  const { state } = useLocation();
 
   useEffect(() => {
     const fetchFeature = async (id: number) => {
       const data = await api.get.feature(id);
-      console.log('related', related);
+      console.log('related state', state);
 
       setFeatures(data);
     };

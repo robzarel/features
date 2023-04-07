@@ -23,9 +23,23 @@
 }
 
 .header {
+  display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
   flex: 0 1 auto;
+  background-color: rgba(var(--background), 0.9);
 }
+.content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.delimiter {
+}
+
 .about,
 .contacts {
   width: 100%;

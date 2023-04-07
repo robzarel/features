@@ -1,7 +1,8 @@
 :root {
   --toggler-padding: 3px;
-  --ball-diameter: 18px;
-  --toggler-width: 54px;
+  --toggler-border: 2px;
+  --ball-diameter: 14px;
+  --toggler-width: 47px;
 }
 
 .simpleToggler {
@@ -10,7 +11,7 @@
   border-radius: var(--toggler-width);
   padding: var(--toggler-padding);
   background-color: rgb(var(--background));
-  border: var(--toggler-padding) solid rgb(var(--accent));
+  border: var(--toggler-border) solid rgb(var(--accent));
   display: flex;
   align-items: center;
   justify-content: space-between;
