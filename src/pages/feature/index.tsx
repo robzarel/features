@@ -4,11 +4,13 @@ import { useParams } from 'react-router-dom';
 import type FeatureType from '../../types/core/feature';
 
 import api from '../../api';
-import { CodeBlock, dracula } from 'react-code-blocks';
+import { CodeBlock, solarizedLight, solarizedDark } from 'react-code-blocks';
+
+import { useTheme } from '../../components/theme-provider';
 
 import Styles from './index.module.css';
 
-type ReadmeItem = FeatureType['readme'][number];
+type ReadmeItem = FeatureType['readme'][number] & { theme: any };
 
 const README_RENDER_FUNCTION = {
   heading: ({ content }: ReadmeItem) => (
@@ -17,14 +19,14 @@ const README_RENDER_FUNCTION = {
   text: ({ content }: ReadmeItem) => (
     <p className={Styles.text}>{decodeURIComponent(content)}</p>
   ),
-  code: ({ content, language }: ReadmeItem) => (
+  code: ({ content, language, theme }: ReadmeItem) => (
     <div className={Styles.code}>
       <CodeBlock
         text={decodeURIComponent(content)}
         language={language}
         showLineNumbers={true}
         startingLineNumber={1}
-        theme={dracula}
+        theme={theme}
       />
     </div>
   ),
@@ -33,6 +35,8 @@ const README_RENDER_FUNCTION = {
 const Feature = () => {
   const [feature, setFeatures] = useState<FeatureType>();
   const { id } = useParams();
+  const { theme } = useTheme();
+  const codeTheme = theme === 'dark' ? solarizedDark : solarizedLight;
 
   useEffect(() => {
     const fetchFeature = async (id: number) => {
@@ -50,7 +54,9 @@ const Feature = () => {
       {feature &&
         feature.readme.map((item, index) => {
           return (
-            <div key={index}>{README_RENDER_FUNCTION[item.type](item)}</div>
+            <div key={index}>
+              {README_RENDER_FUNCTION[item.type]({ ...item, theme: codeTheme })}
+            </div>
           );
         })}
     </div>

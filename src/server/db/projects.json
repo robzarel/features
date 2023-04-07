@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "name": "Tinkoff Journal",
-    "description": "Russia's largest online magazine about money (20 millions visits per month)",
+    "name": "Онлайн журнал",
+    "description": "Крупнейшее в России онлайн издание про деньги",
 
     "started": "2022.10.24",
     "ended": "2023.03.06",
@@ -56,12 +56,12 @@
   },
   {
     "id": 1,
-    "name": "Alfabank credit card obtaining web app",
-    "description": "Product took the top 3 places for 3 years in a row by all of the Russian banks;",
+    "name": "Online анкета кредитных карт",
+    "description": "Пошаговая онлайн форма для подачи заявок на получение кредитной карты",
 
     "started": "",
     "ended": "",
-    "goal": "Simplification of credit card obtaining process in Alfabank",
+    "goal": "Упрощение процесса выдачи кредитных карт (повышение конверсии)",
     "role": {
       "kind": "body",
       "stream": "prod",
@@ -176,8 +176,8 @@
   },
   {
     "id": 2,
-    "name": "СTC web media player",
-    "description": "designed and write from scratch web media player",
+    "name": "web медиа плеер",
+    "description": "проектирование с нуля веб плеера для проигрывания контента",
 
     "started": "",
     "ended": "",

@@ -1,16 +1,20 @@
 import React from 'react';
 
-import { CopyBlock, dracula } from 'react-code-blocks';
+import { CopyBlock, solarizedLight, solarizedDark } from 'react-code-blocks';
 
 import type { default as SnippetType } from '../../types/core/snippet';
+import { useTheme } from '../../components/theme-provider';
 
 import Styles from './index.module.css';
 
 const Snippet = (props: SnippetType) => {
   const { id, name, code, language, description } = props;
 
+  const { theme } = useTheme();
+  const codeTheme = theme === 'dark' ? solarizedDark : solarizedLight;
+
   return (
-    <div className={Styles.wrapper}>
+    <div className={Styles.wrapper} data-snipper-id={id}>
       <div className={Styles.meta}>
         <p className={Styles.name}>{name}</p>
         <p className={Styles.description}>{description}</p>
@@ -23,7 +27,7 @@ const Snippet = (props: SnippetType) => {
             showLineNumbers={false}
             startingLineNumber={1}
             wrapLines
-            theme={dracula}
+            theme={codeTheme}
           />
         </div>
       </div>

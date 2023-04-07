@@ -67,8 +67,8 @@
   },
   {
     "id": 2,
-    "name": "interoperability between applications on the desktop",
-    "description": "настройка коммуникаций между десктоп прилоежниями",
+    "name": "коммуникация между desktop приложениями (fdc3)",
+    "description": "настройка коммуникаций между десктоп приложениями",
     "readme": [
       {
         "type": "heading",
@@ -77,6 +77,54 @@
       {
         "type": "text",
         "content": "fdc3 это стандарт, описывающий коммуникации между десктоп приложениями"
+      }
+    ],
+    "related": []
+  },
+  {
+    "id": 3,
+    "name": "color theming",
+    "description": "Переключение цветовых тем в приложении",
+    "readme": [
+      {
+        "type": "heading",
+        "content": "Общее"
+      },
+      {
+        "type": "text",
+        "content": "идея простая - создаём контекст, отдаём его вниз. Так же создаём компоненты управления через подход compound components"
+      }
+    ],
+    "related": []
+  },
+  {
+    "id": 4,
+    "name": "загрузка файлов",
+    "description": "dnd, валидация, параллельная загрузка и отображение статусов",
+    "readme": [
+      {
+        "type": "heading",
+        "content": "Общее"
+      },
+      {
+        "type": "text",
+        "content": "Несколько компонентов. Провайдер (подход compound components), несколько элементов управления (аплоадер файлов, резолвер конфликтов). Тонкости есть с очищением инпута (так как он не позволяет грузить последовательно файлы с одинаковыми именами"
+      }
+    ],
+    "related": []
+  },
+  {
+    "id": 5,
+    "name": "microfrontend",
+    "description": "микрофронты) что тут добавишь",
+    "readme": [
+      {
+        "type": "heading",
+        "content": "Общее"
+      },
+      {
+        "type": "text",
+        "content": "Пройденный курс: https://www.udemy.com/course/microfrontend-course/"
       }
     ],
     "related": []
