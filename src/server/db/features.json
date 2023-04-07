@@ -128,5 +128,69 @@
       }
     ],
     "related": []
+  },
+  {
+    "id": 6,
+    "name": "deploy github pages",
+    "description": "тонкости настройки деплоя на github pages и настройки actions",
+    "readme": [
+      {
+        "type": "heading",
+        "content": "Общее"
+      },
+      {
+        "type": "text",
+        "content": "Настройка gh-pages, апи на json-server и фишечки раздачи"
+      }
+    ],
+    "related": []
+  },
+  {
+    "id": 7,
+    "name": "unit тесты",
+    "description": "настройка unit тестов в react приложении",
+    "readme": [
+      {
+        "type": "heading",
+        "content": "Общее"
+      },
+      {
+        "type": "text",
+        "content": "jest, packages и прочее"
+      }
+    ],
+    "related": []
+  },
+  {
+    "id": 8,
+    "name": "integration тесты",
+    "description": "настройка интеграционных тестов в react приложении",
+    "readme": [
+      {
+        "type": "heading",
+        "content": "Общее"
+      },
+      {
+        "type": "text",
+        "content": "Проходим пользовательские сценарии (прокликиваем)"
+      }
+    ],
+    "related": []
+  },
+  {
+    "id": 9,
+    "name": "сетап приложения",
+    "description": "настройка eslint, prettier, test, precommit hoos, css modules, typescript",
+    "readme": [
+      {
+        "type": "heading",
+        "content": "Общее"
+      },
+      {
+        "type": "text",
+        "content": "Базовые настройки для старта разработки на типовом стеке"
+      }
+    ],
+    "related": []
   }
 ]
