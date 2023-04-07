@@ -15,6 +15,7 @@ const extractData = ({ data, type }) =>
     id: item.id,
     name: item.name,
     description: item.description,
+    related: item.related ? item.related : [],
   }));
 const arr = [
   { type: 'project', data: projects },

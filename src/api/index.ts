@@ -22,9 +22,12 @@ import type { CV, RELATED } from '../types/common';
 import type SNIPPET from '../types/core/snippet';
 import type PROJECT from '../types/core/project';
 import type FEAUTRE from '../types/core/feature';
-type COMMON = RELATED & {
+type COMMON = {
+  type: 'project' | 'feature' | 'snippet';
+  id: number;
   name: string;
   description: string;
+  related: RELATED;
 };
 
 type API = {

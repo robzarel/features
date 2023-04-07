@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import type FeatureType from '../../types/core/feature';
 
@@ -37,11 +37,14 @@ const Feature = () => {
   const { id } = useParams();
   const { theme } = useTheme();
   const codeTheme = theme === 'dark' ? solarizedDark : solarizedLight;
+  const {
+    state: { related },
+  } = useLocation();
 
   useEffect(() => {
     const fetchFeature = async (id: number) => {
       const data = await api.get.feature(id);
-      console.log('data', data);
+      console.log('related', related);
 
       setFeatures(data);
     };

@@ -1,13 +1,18 @@
 import React from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import type { COMMON } from '../../api';
 
 import Styles from './index.module.css';
 
 const SearchResult = (props: COMMON) => {
-  const { type, id, name, description } = props;
+  const { type, id, name, description, related } = props;
+  const navigate = useNavigate();
+
+  const handleDetailsClick = () => {
+    navigate(`/${type}/${id}`, { state: { related } });
+  };
 
   return (
     <div key={`${type}${id}`} className={Styles.item}>
@@ -15,9 +20,9 @@ const SearchResult = (props: COMMON) => {
         <b>{name}</b>
       </p>
       <p className={Styles.description}>{description}</p>
-      <NavLink className={Styles.details} to={`/${type}/${id}`}>
+      <button className={Styles.details} onClick={handleDetailsClick}>
         details...
-      </NavLink>
+      </button>
     </div>
   );
 };
