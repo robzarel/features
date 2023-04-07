@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/features/static/css/main.15d7527a.css",
-    "main.js": "/features/static/js/main.729f85be.js",
+    "main.css": "/features/static/css/main.91d20bdf.css",
+    "main.js": "/features/static/js/main.bf9632df.js",
     "react-syntax-highlighter/refractor-core-import.js": "/features/static/js/react-syntax-highlighter/refractor-core-import.bd75b5f8.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js": "/features/static/js/react-syntax-highlighter_languages_refractor_abap.162e1a32.chunk.js",
     "react-syntax-highlighter_languages_refractor_actionscript.js": "/features/static/js/react-syntax-highlighter_languages_refractor_actionscript.7a5595f2.chunk.js",
@@ -154,16 +154,10 @@
     "react-syntax-highlighter_languages_refractor_xojo.js": "/features/static/js/react-syntax-highlighter_languages_refractor_xojo.75bc085a.chunk.js",
     "react-syntax-highlighter_languages_refractor_xquery.js": "/features/static/js/react-syntax-highlighter_languages_refractor_xquery.9b50cdff.chunk.js",
     "react-syntax-highlighter_languages_refractor_yaml.js": "/features/static/js/react-syntax-highlighter_languages_refractor_yaml.e03b9442.chunk.js",
-    "static/media/me.jpeg": "/features/static/media/me.f992154fafca4864a26f.jpeg",
     "static/media/cross.svg": "/features/static/media/cross.6212a9254154e436f0a17f170e14b9a2.svg",
-    "static/media/mail.svg": "/features/static/media/mail.f7dc67d8f6063dae41191af129e782b0.svg",
     "index.html": "/features/index.html",
-    "static/media/linkedin.svg": "/features/static/media/linkedin.c4d117741b6b981f4d3363a09679fff8.svg",
-    "static/media/telegram.svg": "/features/static/media/telegram.c023ab77b42b20a49b6bc1faf2e45a2e.svg",
-    "static/media/facebook.svg": "/features/static/media/facebook.c0f168255735dfa1dcd43031fdbe0e4e.svg",
-    "static/media/check.svg": "/features/static/media/check.66f3777ab144d265b706ea8c5a41686d.svg",
-    "main.15d7527a.css.map": "/features/static/css/main.15d7527a.css.map",
-    "main.729f85be.js.map": "/features/static/js/main.729f85be.js.map",
+    "main.91d20bdf.css.map": "/features/static/css/main.91d20bdf.css.map",
+    "main.bf9632df.js.map": "/features/static/js/main.bf9632df.js.map",
     "refractor-core-import.bd75b5f8.chunk.js.map": "/features/static/js/react-syntax-highlighter/refractor-core-import.bd75b5f8.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.162e1a32.chunk.js.map": "/features/static/js/react-syntax-highlighter_languages_refractor_abap.162e1a32.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_actionscript.7a5595f2.chunk.js.map": "/features/static/js/react-syntax-highlighter_languages_refractor_actionscript.7a5595f2.chunk.js.map",
@@ -318,7 +312,7 @@
     "react-syntax-highlighter_languages_refractor_yaml.e03b9442.chunk.js.map": "/features/static/js/react-syntax-highlighter_languages_refractor_yaml.e03b9442.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.15d7527a.css",
-    "static/js/main.729f85be.js"
+    "static/css/main.91d20bdf.css",
+    "static/js/main.bf9632df.js"
   ]
 }
