@@ -10,6 +10,7 @@
   max-width: 1182px;
   padding: 5px 10px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .header,
@@ -37,6 +38,7 @@
   flex-wrap: nowrap;
   gap: 20px;
   padding: 0 15px;
+  box-sizing: border-box;
 }
 .delimiter {
 }
