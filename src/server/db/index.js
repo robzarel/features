@@ -5,9 +5,9 @@ const projects = require('./projects.json');
 const features = require('./features.json');
 const snippets = require('./snippets.json');
 
-const experience = require('./experience.json');
+const experience = require('./ru/experience.json');
 const skills = require('./skills.json');
-const education = require('./education.json');
+const education = require('./ru/education.json');
 
 const extractData = ({ data, type }) =>
   data.map((item) => ({

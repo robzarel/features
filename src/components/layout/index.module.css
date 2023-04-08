@@ -51,9 +51,8 @@
   background-color: rgba(var(--background-primary), 0.9);
   padding: 20px 0;
 }
-.contacts {
-  background-color: rgba(var(--background-primary-accent), 0.9);
-  padding: 10px 0;
+.toggler {
+  margin-left: auto;
 }
 
 .main {

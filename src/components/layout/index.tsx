@@ -16,20 +16,11 @@ const Layout = () => {
         <div className={Styles.wrapper}>
           <div className={Styles.content}>
             <Navigation mode='horizontal' />
-            <span className={Styles.delimiter}>&#124;</span>
             <div className={Styles.toggler}>
               <Theme.SimpleToggler />
             </div>
           </div>
         </div>
-        {/* <div className={Styles.about}>
-            <About />
-        </div>
-        <div className={Styles.contacts}>
-          <div className={Styles.wrapper}>
-            <Contacts />
-          </div>
-        </div> */}
       </header>
       <main className={Styles.main}>
         <div className={Styles.wrapper}>

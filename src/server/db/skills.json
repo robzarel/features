@@ -88,25 +88,5 @@
     "proficiency": "intermediate",
     "experience": 5,
     "lastUsage": 2023
-  },
-  {
-    "id": 9,
-    "name": "hapi.js",
-    "kind": "hard",
-    "category": "framework",
-    "isPrimary": false,
-    "proficiency": "novice",
-    "experience": 1,
-    "lastUsage": 2019
-  },
-  {
-    "id": 10,
-    "name": "react-router",
-    "kind": "hard",
-    "category": "lybrary",
-    "isPrimary": true,
-    "proficiency": "advanced",
-    "experience": 5,
-    "lastUsage": 2023
   }
 ]

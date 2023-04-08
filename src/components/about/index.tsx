@@ -10,10 +10,10 @@ const About = () => {
     <div className={Styles.wrapper}>
       <img className={Styles.photo} src={Photo} alt='photo' />
       <div className={Styles.info}>
-        <h1 className={Styles.fullName}>Boris Lazarev</h1>
-        <h3 className={Styles.role}>Senior Frontend Developer</h3>
+        <h1 className={Styles.fullName}>Лазарев Борис</h1>
+        <h3 className={Styles.role}>Ведущий frontend разработчик</h3>
         <p className={Styles.abstract}>
-          Software engineer with {workYears}+ years of experience in IT
+          Frontend разработчик с {workYears}+ годами опыта в сфере IT
         </p>
       </div>
     </div>

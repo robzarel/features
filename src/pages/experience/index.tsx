@@ -31,7 +31,7 @@ const Experience = () => {
       </div>
       <div className={Styles.columns}>
         <div className={Styles.leftColumn}>
-          <h2 className={Styles.title}>Work Experience</h2>
+          <h2 className={Styles.title}>Опыт работы</h2>
           {cv &&
             cv.experience.map((item) => (
               <WorkExperience key={item.id} {...item} />
@@ -39,11 +39,11 @@ const Experience = () => {
         </div>
         <div className={Styles.rightColumn}>
           <div className={Styles.skills}>
-            <h2 className={Styles.title}>Skills</h2>
+            <h2 className={Styles.title}>Навыки</h2>
             {cv && cv.skills.map((item) => <Skill key={item.id} {...item} />)}
           </div>
           <div className={Styles.education}>
-            <h2 className={Styles.title}>Education</h2>
+            <h2 className={Styles.title}>Образование</h2>
             {cv &&
               cv.education.map((item) => <Education key={item.id} {...item} />)}
           </div>
@@ -54,4 +54,3 @@ const Experience = () => {
 };
 
 export default Experience;
-//todo: подумать над тем, чтобы сделать скиллы кликабельными

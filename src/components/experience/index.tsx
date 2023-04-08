@@ -10,7 +10,7 @@ type Props = EXPERIENCE;
 const ExperienceItem = (props: Props) => {
   const { role, city, country, started, ended, company, achievements } = props;
   const startedFrom = toUserFormat(new Date(started));
-  const endedAt = ended ? toUserFormat(new Date(ended)) : 'Now';
+  const endedAt = ended ? toUserFormat(new Date(ended)) : 'Сейчас';
   const place = `${capitalize(city)}, ${capitalize(country)}`;
 
   return (
@@ -24,7 +24,7 @@ const ExperienceItem = (props: Props) => {
         <p className={Styles.company}>{company}</p>
       </div>
       <div className={Styles.achievements}>
-        <p className={Styles.achievementsTitle}>Achievements/Tasks</p>
+        <p className={Styles.achievementsTitle}>Достижения/задачи</p>
         <ul className={Styles.achievementsList}>
           {achievements.map((item, index) => (
             <li className={Styles.achievementsItem} key={index}>
