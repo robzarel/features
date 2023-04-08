@@ -29,22 +29,24 @@ const Experience = () => {
       <div className={Styles.about}>
         <About />
       </div>
-      <div className={Styles.leftColumn}>
-        <h2 className={Styles.title}>Work Experience</h2>
-        {cv &&
-          cv.experience.map((item) => (
-            <WorkExperience key={item.id} {...item} />
-          ))}
-      </div>
-      <div className={Styles.rightColumn}>
-        <div className={Styles.skills}>
-          <h2 className={Styles.title}>Skills</h2>
-          {cv && cv.skills.map((item) => <Skill key={item.id} {...item} />)}
-        </div>
-        <div className={Styles.education}>
-          <h2 className={Styles.title}>Education</h2>
+      <div className={Styles.columns}>
+        <div className={Styles.leftColumn}>
+          <h2 className={Styles.title}>Work Experience</h2>
           {cv &&
-            cv.education.map((item) => <Education key={item.id} {...item} />)}
+            cv.experience.map((item) => (
+              <WorkExperience key={item.id} {...item} />
+            ))}
+        </div>
+        <div className={Styles.rightColumn}>
+          <div className={Styles.skills}>
+            <h2 className={Styles.title}>Skills</h2>
+            {cv && cv.skills.map((item) => <Skill key={item.id} {...item} />)}
+          </div>
+          <div className={Styles.education}>
+            <h2 className={Styles.title}>Education</h2>
+            {cv &&
+              cv.education.map((item) => <Education key={item.id} {...item} />)}
+          </div>
         </div>
       </div>
     </div>

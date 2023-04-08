@@ -28,6 +28,13 @@
 .img {
   border-radius: 50%;
 }
+
+@media screen and (min-width: 992px) {
+  .photo {
+    margin-left: auto;
+    margin-right: 125px;
+  }
+}
 @media screen and (min-width: 576px) {
   .wrapper {
     flex-wrap: nowrap;
@@ -35,10 +42,5 @@
   }
   .info {
     text-align: left;
-  }
-
-  .photo {
-    margin-left: auto;
-    margin-right: 100px;
   }
 }

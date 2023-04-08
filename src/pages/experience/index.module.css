@@ -17,11 +17,18 @@
   margin: auto;
   width: 100%;
 }
-.rightColumn {
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   margin: auto;
 }
+.rightColumn {
+  /* margin: auto; */
+  margin-left: auto;
+}
 .leftColumn {
-  margin: auto;
+  /* margin: auto; */
 
   min-width: 320px;
   max-width: 567px;
@@ -51,15 +58,23 @@
   .leftColumn {
     max-width: 780px;
   }
+  .columns {
+    max-width: 780px;
+    margin: auto;
+  }
 }
 @media screen and (min-width: 992px) {
   .about {
     width: 100%;
     max-width: 100%;
   }
+  .columns {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+  }
   .leftColumn {
     max-width: 567px;
-    margin: 0;
   }
   .rightColumn {
     margin-left: auto;
