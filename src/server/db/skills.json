@@ -88,5 +88,15 @@
     "proficiency": "intermediate",
     "experience": 5,
     "lastUsage": 2023
+  },
+  {
+    "id": 9,
+    "name": "webpack module federation",
+    "kind": "hard",
+    "category": "tool",
+    "isPrimary": false,
+    "proficiency": "intermediate",
+    "experience": 2,
+    "lastUsage": 2023
   }
 ]
