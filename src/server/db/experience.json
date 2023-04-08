@@ -13,7 +13,7 @@
       "work in progress..."
     ],
     "description": "some full detailed description of the role, tasks and acievements",
-    "started": "2023.03.09",
+    "started": "2023/03/09",
     "related": []
   },
   {
@@ -30,8 +30,8 @@
       "implementing of unit/integration tests across modules/user scenarios. "
     ],
     "description": "some full detailed description of the role, tasks and acievements",
-    "started": "2022.10.24",
-    "ended": "2023.03.06",
+    "started": "2022/10/24",
+    "ended": "2023/03/06",
     "related": [
       { "type": "project", "id": 0 },
       { "type": "feature", "id": 0 },
@@ -52,8 +52,8 @@
       "5% employee utilization growth due to upgrading the resource planning system"
     ],
     "description": "some full detailed description of the role, tasks and acievements",
-    "started": "2020.01.01",
-    "ended": "2022.10.21",
+    "started": "2020/01/01",
+    "ended": "2022/10/21",
     "related": []
   },
   {
@@ -70,8 +70,8 @@
       "hiring, onboarding, assessment, motivation and retention of specialists."
     ],
     "description": "some full detailed description of the role, tasks and acievements",
-    "started": "2018.06.01",
-    "ended": "2019.12.31",
+    "started": "2018/06/01",
+    "ended": "2019/12/31",
     "related": []
   },
   {
@@ -88,8 +88,8 @@
       "hiring, onboarding, assessment, motivation and retention of specialists."
     ],
     "description": "some full detailed description of the role, tasks and acievements",
-    "started": "2017.07.01",
-    "ended": "2019.12.31",
+    "started": "2017/07/01",
+    "ended": "2019/12/31",
     "related": []
   },
   {
@@ -107,8 +107,8 @@
       "development of an corporate reference book (desktop app)"
     ],
     "description": "some full detailed description of the role, tasks and acievements",
-    "started": "2015.02.11",
-    "ended": "2017.07.31",
+    "started": "2015/02/11",
+    "ended": "2017/07/31",
     "related": []
   }
 ]

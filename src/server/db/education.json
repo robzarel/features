@@ -3,8 +3,8 @@
     "id": 0,
     "degree": "Bachalor of engineering",
     "univercity": "Izhevsk State Technical University",
-    "started": "2009.09.01",
-    "ended": "2013.06.30",
+    "started": "2009/09/01",
+    "ended": "2013/06/30",
     "city": "izhevsk",
     "country": "russia"
   },
@@ -12,8 +12,8 @@
     "id": 1,
     "degree": "Master of engineering",
     "univercity": "Izhevsk State Technical University",
-    "started": "2013.09.01",
-    "ended": "2015.06.30",
+    "started": "2013/09/01",
+    "ended": "2015/06/30",
     "city": "izhevsk",
     "country": "russia"
   },
@@ -21,8 +21,8 @@
     "id": 2,
     "degree": "Master of Translation and Interpreting (german)",
     "univercity": "Izhevsk State Technical University",
-    "started": "2009.09.01",
-    "ended": "2015.06.30",
+    "started": "2009/09/01",
+    "ended": "2015/06/30",
     "city": "izhevsk",
     "country": "russia"
   }
