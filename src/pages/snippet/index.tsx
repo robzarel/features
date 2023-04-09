@@ -1,37 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Snippet from '../../components/snippet';
-import type { default as SnippetType } from '../../types/core/snippet';
+import StyledMarkDown from '../../components/styled-markdown';
 
 import api from '../../api';
 
 import Styles from './index.module.css';
 
 const SnippetPage = () => {
-  const [snippet, setSnippet] = useState<SnippetType>();
+  const [markdown, setMarkdown] = useState('');
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchSnippets = async (id: number) => {
-      const parsed = await api.get.snippet(id);
-      setSnippet(parsed);
+    const fetchReadme = async (id: number) => {
+      const md: string = await api.get.readme('snippet', id);
+
+      setMarkdown(md);
     };
 
-    id && fetchSnippets(+id);
+    id && fetchReadme(+id);
   }, []);
 
   return (
     <div className={Styles.wrapper}>
-      {snippet && (
-        <Snippet
-          id={snippet.id}
-          code={decodeURI(snippet.code)}
-          language={snippet.language}
-          name={snippet.name}
-          description={snippet.description}
-        />
-      )}
+      <StyledMarkDown md={markdown} />
     </div>
   );
 };

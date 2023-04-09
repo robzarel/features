@@ -7,18 +7,18 @@ import api from '../../api';
 
 import Styles from './index.module.css';
 
-const Feature = () => {
+const FeaturePage = () => {
   const [markdown, setMarkdown] = useState('');
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchFeature = async (id: number) => {
-      const data: string = await api.get.readme('feature', id);
+    const fetchReadme = async (id: number) => {
+      const md: string = await api.get.readme('feature', id);
 
-      setMarkdown(data);
+      setMarkdown(md);
     };
 
-    id && fetchFeature(+id);
+    id && fetchReadme(+id);
   }, []);
 
   return (
@@ -28,4 +28,4 @@ const Feature = () => {
   );
 };
 
-export default Feature;
+export default FeaturePage;

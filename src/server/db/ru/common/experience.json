@@ -81,7 +81,7 @@
   {
     "id": 1,
     "kind": "development",
-    "role": "Senior Frontend Engineer",
+    "role": "Ведущий frontend разработчик",
     "company": "Центр высоких технологий",
     "city": "ижевск",
     "country": "россия",
@@ -99,7 +99,7 @@
   {
     "id": 0,
     "kind": "development",
-    "role": "Frontend Engineer",
+    "role": "Frontend разработчик",
     "company": "Центр высоких технологий",
     "city": "ижевск",
     "country": "россия",
