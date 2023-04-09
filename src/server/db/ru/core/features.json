@@ -1,0 +1,85 @@
+[
+  {
+    "id": 0,
+    "name": "validators",
+    "description": "простые функции для валидации значений",
+    "related": [
+      { "type": "snippet", "id": 0 },
+      { "type": "snippet", "id": 1 },
+      { "type": "snippet", "id": 2 },
+      { "type": "snippet", "id": 3 },
+      { "type": "snippet", "id": 4 },
+      { "type": "snippet", "id": 5 },
+      { "type": "feature", "id": 1 }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "form hooks",
+    "description": "react hooks для работы с формами. Могут работть в связке с валидаторами",
+    "related": []
+  },
+  {
+    "id": 2,
+    "name": "коммуникация между desktop приложениями (fdc3)",
+    "description": "настройка коммуникаций между десктоп приложениями",
+    "related": []
+  },
+  {
+    "id": 3,
+    "name": "color theming",
+    "description": "Переключение цветовых тем в приложении",
+    "related": []
+  },
+  {
+    "id": 4,
+    "name": "загрузка файлов",
+    "description": "dnd, валидация, параллельная загрузка и отображение статусов",
+    "related": []
+  },
+  {
+    "id": 5,
+    "name": "microfrontend",
+    "description": "микрофронты) что тут добавишь",
+    "related": []
+  },
+  {
+    "id": 6,
+    "name": "deploy github pages",
+    "description": "тонкости настройки деплоя на github pages и настройки actions",
+    "related": []
+  },
+  {
+    "id": 7,
+    "name": "unit тесты",
+    "description": "настройка unit тестов в react приложении",
+    "related": []
+  },
+  {
+    "id": 8,
+    "name": "integration тесты",
+    "description": "настройка интеграционных тестов в react приложении",
+    "related": []
+  },
+  {
+    "id": 9,
+    "name": "сетап приложения",
+    "description": "настройка eslint, prettier, test, precommit hoos, css modules, typescript",
+    "related": []
+  },
+  {
+    "id": 10,
+    "name": "token authentication",
+    "description": "Разграничение прав доступа к частям приложения и/или организация доступа к приватному api",
+    "related": [
+      { "type": "snippet", "id": 9 },
+      { "type": "snippet", "id": 10 }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "date formatting",
+    "description": "Форматирования дат",
+    "related": [{ "type": "snippet", "id": 7 }]
+  }
+]
