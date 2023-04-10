@@ -94,5 +94,58 @@
       { "type": "feature", "id": 10 },
       { "type": "snippet", "id": 8 }
     ]
+  },
+  {
+    "id": 10,
+    "name": "useForm",
+    "description": "Хук, описывающий логику работы отправки формы",
+    "language": "typescript",
+    "related": [
+      { "type": "feature", "id": 0 },
+      { "type": "snippet", "id": 11 },
+      { "type": "snippet", "id": 12 },
+      { "type": "snippet", "id": 13 },
+      { "type": "snippet", "id": 14 }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "useTextFormField",
+    "description": "Хук для работы с текстовым полем типа HTMLTextAreaElement | HTMLInputElement",
+    "language": "typescript",
+    "related": [
+      { "type": "feature", "id": 0 },
+      { "type": "snippet", "id": 10 }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "useRadioFormField",
+    "description": "Хук для работы с кастомным radio инпутом",
+    "language": "typescript",
+    "related": [
+      { "type": "feature", "id": 0 },
+      { "type": "snippet", "id": 10 }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "useCustomSelectFormField",
+    "description": "Хук для работы с кастомным select инпутом",
+    "language": "typescript",
+    "related": [
+      { "type": "feature", "id": 0 },
+      { "type": "snippet", "id": 10 }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "useFilesFormField",
+    "description": "Хук для работы с file инпутом",
+    "language": "typescript",
+    "related": [
+      { "type": "feature", "id": 0 },
+      { "type": "snippet", "id": 10 }
+    ]
   }
 ]
