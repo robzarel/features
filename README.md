@@ -14,10 +14,8 @@
 - `src/server/db/ru/core/features.json`
 - `src/server/db/ru/core/projects.json`
 - `src/server/db/ru/core/snippets.json`
-  Модель данных берём или по примеру или по описанным типам в соответствующем файле:
-- `src/types/core/feature.ts`
-- `src/types/core/projects.ts`
-- `src/types/core/snippets.ts`
+
+Модель данных берём или по примеру или по описанным типам в каталоге `src/types/core/<type>ts`
 
 2. не забываем указывать связи на сниппеты и фичи в поле `related`. Это потом пригодится)
 3. создаём соответствующие `readme` в формате markdown для каждого нового юнита, который добавили. Например - докинули фичу с номером 12, значит описание для неё положили в файл `src/server/db/ru/readme/feature/12.md`. Для проектов и сниппетов аналогично. Эти файлы подтянутся при заходе на ваш развёрнутый github pages (url указан в секции `homepage` в package.json) а путь по следующему паттерну сформируется: `<your-github-pages-homepage>/<type>/<id>`
