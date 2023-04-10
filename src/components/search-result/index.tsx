@@ -7,7 +7,7 @@ import type { COMMON } from '../../api';
 import Styles from './index.module.css';
 
 const SearchResult = (props: COMMON) => {
-  const { type, id, name, description, related } = props;
+  const { type, id, name, description, related, hasReadme } = props;
   const navigate = useNavigate();
 
   const handleDetailsClick = () => {
@@ -16,12 +16,12 @@ const SearchResult = (props: COMMON) => {
 
   return (
     <div key={`${type}${id}`} className={Styles.item}>
-      <p className={Styles.name}>
-        <b>{name}</b>
+      <p className={Styles.name} data-has-readme={hasReadme}>
+        <b>{`${name}${hasReadme ? '' : '(wip)'}`}</b>
       </p>
       <p className={Styles.description}>{description}</p>
       <button className={Styles.details} onClick={handleDetailsClick}>
-        details...
+        readme
       </button>
     </div>
   );

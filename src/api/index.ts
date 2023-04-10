@@ -29,6 +29,7 @@ type COMMON = {
   name: string;
   description: string;
   related: RELATED;
+  hasReadme: boolean;
 };
 
 type API = {

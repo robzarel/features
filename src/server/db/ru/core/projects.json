@@ -52,6 +52,7 @@
         "category": "lybrary"
       }
     ],
+    "hasReadme": true,
     "related": []
   },
   {
@@ -172,6 +173,7 @@
         "category": "lybrary"
       }
     ],
+    "hasReadme": false,
     "related": []
   },
   {
@@ -185,6 +187,7 @@
     "role": "",
     "team": "",
     "stack": "",
+    "hasReadme": false,
     "related": []
   },
   {
@@ -198,6 +201,7 @@
     "role": "",
     "team": "",
     "stack": "",
+    "hasReadme": false,
     "related": []
   },
   {
@@ -211,11 +215,12 @@
     "role": "",
     "team": "",
     "stack": "",
+    "hasReadme": false,
     "related": []
   },
   {
     "id": 5,
-    "name": "Конкурс фотографий в соцсетях",
+    "name": "Конкурс фотографий в нескольких соцсетях одновременно",
     "description": "Приложение по типу 'конкурс лайков' в instagram/vk",
 
     "started": "",
@@ -224,6 +229,63 @@
     "role": "",
     "team": "",
     "stack": "",
+    "hasReadme": false,
+    "related": []
+  },
+  {
+    "id": 6,
+    "name": "Корпоративный справочник сотрдуников (desktop)",
+    "description": "Приложение на nw.js и angular",
+
+    "started": "",
+    "ended": "",
+    "goal": "",
+    "role": "",
+    "team": "",
+    "stack": "",
+    "hasReadme": false,
+    "related": []
+  },
+  {
+    "id": 7,
+    "name": "SmartTV приложение для телеканала",
+    "description": "Приложение для просмотра контанта, для одного из крупных российских телеканалов",
+
+    "started": "",
+    "ended": "",
+    "goal": "",
+    "role": "",
+    "team": "",
+    "stack": "",
+    "hasReadme": false,
+    "related": []
+  },
+  {
+    "id": 8,
+    "name": "Админка для системы доставки",
+    "description": "Приложение для управления различными ролями, участвующими в процессе доставки готовой пищевой продукции.",
+
+    "started": "",
+    "ended": "",
+    "goal": "",
+    "role": "",
+    "team": "",
+    "stack": "",
+    "hasReadme": false,
+    "related": []
+  },
+  {
+    "id": 9,
+    "name": "Мелкие сайты",
+    "description": "Лендинги, пет проекты",
+
+    "started": "",
+    "ended": "",
+    "goal": "",
+    "role": "",
+    "team": "",
+    "stack": "",
+    "hasReadme": false,
     "related": []
   }
 ]
