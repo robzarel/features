@@ -147,5 +147,49 @@
       { "type": "feature", "id": 0 },
       { "type": "snippet", "id": 10 }
     ]
+  },
+  {
+    "id": 15,
+    "name": "react portal",
+    "description": "Портал для рендера компонентов",
+    "language": "typescript",
+    "related": [
+      { "type": "feature", "id": 12 },
+      { "type": "snippet", "id": 16 }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "react modal",
+    "description": "Модальное окно для рендера контента",
+    "language": "typescript",
+    "related": [
+      { "type": "feature", "id": 12 },
+      { "type": "snippet", "id": 15 }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "downloadBlob",
+    "description": "Утилита, для сохранения файла по ссылке",
+    "language": "typescript",
+    "related": []
+  },
+  {
+    "id": 18,
+    "name": "theming: css tokens",
+    "description": "Пример css переменных для определения цветовых тем в приложении",
+    "language": "typescript",
+    "related": [{ "type": "feature", "id": 3 }]
+  },
+  {
+    "id": 19,
+    "name": "ThemeProvider",
+    "description": "Пример css переменных для определения цветовых тем в приложении",
+    "language": "typescript",
+    "related": [
+      { "type": "feature", "id": 3 },
+      { "type": "snippet", "id": 18 }
+    ]
   }
 ]
