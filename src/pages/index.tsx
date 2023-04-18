@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Layout from '../components/layout';
 
-import Experience from './experience';
+import CV from './cv';
 import Search from './search';
 import NotFound from './not-found';
 
@@ -16,7 +16,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route path='/' element={<Search />} />
-        <Route path='/experience' element={<Experience />} />
+        <Route path='/cv' element={<CV />} />
         <Route path='/project/:id' element={<Project />} />
         <Route path='/feature/:id' element={<Feature />} />
         <Route path='/snippet/:id' element={<Snippet />} />

@@ -25,7 +25,7 @@ const Search = () => {
   }, []);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
+    setSearch(event.target.value.toLowerCase());
   };
   const handleClose = () => {
     setSearch('');

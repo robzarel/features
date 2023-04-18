@@ -48,7 +48,7 @@
     "id": 4,
     "name": "загрузка файлов",
     "description": "валидация и параллельная загрузка файлов",
-    "hasReadme": false,
+    "hasReadme": true,
     "related": [
       { "type": "feature", "id": 0 },
       { "type": "feature", "id": 1 },
