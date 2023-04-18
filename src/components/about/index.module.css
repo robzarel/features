@@ -14,23 +14,26 @@
 .role {
   color: rgb(var(--accent));
 }
-.photo {
-  display: flex;
-  height: 160px;
+.photoWrapper {
   border: 6px solid rgb(var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: auto;
   border-radius: 50%;
-  background-image: url(http://localhost:3000/features/static/media/me.f992154….jpeg);
-  background-position: center;
-  background-size: cover;
+}
+.photo {
+  height: 148px;
+  width: 148px;
   box-sizing: border-box;
+  border-radius: 50%;
 }
 .img {
   border-radius: 50%;
 }
 
 @media screen and (min-width: 992px) {
-  .photo {
+  .photoWrapper {
     margin-left: auto;
     margin-right: 125px;
   }

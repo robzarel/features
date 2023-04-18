@@ -213,7 +213,7 @@
   },
   {
     "id": 20,
-    "name": "WithAurh",
+    "name": "WithAuth",
     "description": "Компонент обёртка, который разрганичивает доступ к приватным частям интерфейса",
     "language": "typescript",
     "hasReadme": true,

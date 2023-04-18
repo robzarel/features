@@ -19,7 +19,13 @@
     "name": "Валидация form в react",
     "description": "Принципы организации валидации форм в реакт приложении",
     "hasReadme": true,
-    "related": []
+    "related": [
+      { "type": "snippet", "id": 10 },
+      { "type": "snippet", "id": 11 },
+      { "type": "snippet", "id": 12 },
+      { "type": "snippet", "id": 13 },
+      { "type": "snippet", "id": 14 }
+    ]
   },
   {
     "id": 2,
@@ -41,9 +47,13 @@
   {
     "id": 4,
     "name": "загрузка файлов",
-    "description": "dnd, валидация, параллельная загрузка и отображение статусов",
+    "description": "валидация и параллельная загрузка файлов",
     "hasReadme": false,
-    "related": []
+    "related": [
+      { "type": "feature", "id": 0 },
+      { "type": "feature", "id": 1 },
+      { "type": "feature", "id": 13 }
+    ]
   },
   {
     "id": 5,
@@ -82,7 +92,7 @@
   },
   {
     "id": 10,
-    "name": "token authentication",
+    "name": "token authorization",
     "description": "Разграничение прав доступа к частям приложения и/или организация доступа к приватному api",
     "hasReadme": true,
     "related": [
@@ -106,5 +116,12 @@
       { "type": "snippet", "id": 15 },
       { "type": "snippet", "id": 16 }
     ]
+  },
+  {
+    "id": 13,
+    "name": "dnd | drag-and-drop",
+    "description": "DND на основе reac-dnd",
+    "hasReadme": true,
+    "related": [{ "type": "feature", "id": 4 }]
   }
 ]
