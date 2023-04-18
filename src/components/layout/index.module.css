@@ -67,11 +67,7 @@
 }
 
 @media print {
-  /* TODO: этот оверлей для принтинга затеняет весь контент */
   .header {
-    box-shadow: inset 0 0 0 1000px rgba(var(--background-primary), 0.9);
-  }
-  .footer {
-    box-shadow: inset 0 0 0 1000px rgba(var(--background-primary), 0.9);
+    display: none;
   }
 }

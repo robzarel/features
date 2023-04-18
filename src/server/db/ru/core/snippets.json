@@ -80,7 +80,7 @@
     "description": "Преобразование даты",
     "language": "typescript",
     "hasReadme": true,
-    "related": [{ "type": "feature", "id": 11 }]
+    "related": []
   },
   {
     "id": 8,

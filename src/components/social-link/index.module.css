@@ -47,11 +47,16 @@
 .link {
   text-decoration: none;
   height: 20px;
-  /* line-height: 20px; */
   color: white;
   transition: transform 0.2s ease-in-out;
 }
 
 .link:hover {
   transform: scale(1.05);
+}
+
+@media print {
+  .link {
+    color: white !important;
+  }
 }
