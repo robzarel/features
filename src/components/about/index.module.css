@@ -48,3 +48,16 @@
     margin-right: 125px;
   }
 }
+
+@media print {
+  .wrapper {
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+  }
+  .info {
+    text-align: left;
+  }
+  .photoWrapper {
+    margin-left: auto;
+  }
+}

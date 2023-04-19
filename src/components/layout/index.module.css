@@ -67,7 +67,8 @@
 }
 
 @media print {
-  .header {
+  .header,
+  .footer {
     display: none;
   }
 

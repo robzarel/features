@@ -77,11 +77,6 @@
   transform: scale(1.1);
 }
 
-@media print {
-  .download {
-    display: none;
-  }
-}
 @media screen and (min-width: 567px) {
   .about,
   .leftColumn {
@@ -108,5 +103,27 @@
   .rightColumn {
     margin-left: auto;
     max-width: 360px;
+  }
+}
+
+@media print {
+  .download {
+    display: none;
+  }
+  .about {
+    width: 100%;
+    max-width: 100%;
+  }
+  .columns {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+  }
+  .leftColumn {
+    max-width: 567px;
+    max-width: 100%;
+  }
+  .rightColumn {
+    margin-left: auto;
   }
 }

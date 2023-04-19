@@ -15,6 +15,14 @@ const Experience = () => {
   const [cv, setCv] = useState<CV>();
 
   useEffect(() => {
+    document.title = 'Lazarev Boris';
+
+    return () => {
+      document.title = 'features';
+    };
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       const data = await api.get.cv();
 
