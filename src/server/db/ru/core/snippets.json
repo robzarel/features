@@ -221,5 +221,13 @@
       { "type": "feature", "id": 10 },
       { "type": "snippet", "id": 9 }
     ]
+  },
+  {
+    "id": 21,
+    "name": "Radio component",
+    "description": "Компонент радио группы",
+    "language": "typescript",
+    "hasReadme": true,
+    "related": []
   }
 ]

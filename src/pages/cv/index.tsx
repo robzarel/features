@@ -24,6 +24,10 @@ const Experience = () => {
     fetchData();
   }, []);
 
+  const handleDonwloadClick = () => {
+    window.print();
+  };
+
   return (
     <div className={Styles.wrapper}>
       <div className={Styles.about}>
@@ -31,7 +35,14 @@ const Experience = () => {
       </div>
       <div className={Styles.columns}>
         <div className={Styles.leftColumn}>
-          <h2 className={Styles.title}>Опыт работы</h2>
+          <h2 className={Styles.title}>
+            Опыт работы{' '}
+            <span
+              className={Styles.download}
+              onClick={handleDonwloadClick}
+              title='скачать'
+            />
+          </h2>
           {cv &&
             cv.experience.map((item) => (
               <WorkExperience key={item.id} {...item} />

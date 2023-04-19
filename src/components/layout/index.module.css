@@ -70,4 +70,10 @@
   .header {
     display: none;
   }
+
+  .main {
+    flex: 1 1 auto;
+    background-color: white;
+    color: black;
+  }
 }
