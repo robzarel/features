@@ -60,13 +60,6 @@ const Search = () => {
         </div>
       </div>
       <div className={Styles.results}>
-        <div className={Styles.resultHeading}></div>
-        <div className={Styles.projects}>
-          <div className={Styles.resultTitle}>Projects</div>
-          {projects.map((item) => (
-            <SearchResult key={item.id} {...item} />
-          ))}
-        </div>
         <div className={Styles.features}>
           <div className={Styles.resultTitle}>Features</div>
           {features.map((item) => (
@@ -76,6 +69,12 @@ const Search = () => {
         <div className={Styles.snippets}>
           <div className={Styles.resultTitle}>Snippets</div>
           {snippets.map((item) => (
+            <SearchResult key={item.id} {...item} />
+          ))}
+        </div>
+        <div className={Styles.projects}>
+          <div className={Styles.resultTitle}>Projects</div>
+          {projects.map((item) => (
             <SearchResult key={item.id} {...item} />
           ))}
         </div>

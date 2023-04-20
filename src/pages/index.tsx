@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from '../components/layout';
 
 import CV from './cv';
-import Search from './search';
+import Storage from './storage';
 import NotFound from './not-found';
 
 import Project from './project';
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
-        <Route path='/' element={<Search />} />
+        <Route path='/' element={<Storage />} />
         <Route path='/cv' element={<CV />} />
         <Route path='/project/:id' element={<Project />} />
         <Route path='/feature/:id' element={<Feature />} />

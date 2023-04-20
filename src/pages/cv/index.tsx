@@ -53,7 +53,10 @@ const Experience = () => {
           </h2>
           {cv &&
             cv.experience.map((item) => (
-              <WorkExperience key={item.id} {...item} />
+              <>
+                <WorkExperience key={item.id} {...item} />
+                <br />
+              </>
             ))}
         </div>
         <div className={Styles.rightColumn}>

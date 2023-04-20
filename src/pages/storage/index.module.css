@@ -11,7 +11,7 @@
 .input {
   width: 100%;
   line-height: 50px;
-  font-size: 20px;
+  font-size: 17px;
   border-radius: 3px;
   border: 1px solid lightgray;
   outline: none;
@@ -84,4 +84,10 @@
 .resultTitle {
   color: rgb(var(--accent));
   font-size: 24px;
+}
+
+@media screen and (min-width: 567px) {
+  .input {
+    font-size: 20px;
+  }
 }
