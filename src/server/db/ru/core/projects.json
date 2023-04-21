@@ -215,7 +215,7 @@
     "role": "",
     "team": "",
     "stack": "",
-    "hasReadme": false,
+    "hasReadme": true,
     "related": []
   },
   {
@@ -229,7 +229,7 @@
     "role": "",
     "team": "",
     "stack": "",
-    "hasReadme": false,
+    "hasReadme": true,
     "related": []
   },
   {
@@ -243,7 +243,7 @@
     "role": "",
     "team": "",
     "stack": "",
-    "hasReadme": false,
+    "hasReadme": true,
     "related": []
   },
   {
@@ -257,7 +257,7 @@
     "role": "",
     "team": "",
     "stack": "",
-    "hasReadme": false,
+    "hasReadme": true,
     "related": []
   },
   {
@@ -271,21 +271,7 @@
     "role": "",
     "team": "",
     "stack": "",
-    "hasReadme": false,
-    "related": []
-  },
-  {
-    "id": 9,
-    "name": "Мелкие сайты",
-    "description": "Лендинги, пет проекты",
-
-    "started": "",
-    "ended": "",
-    "goal": "",
-    "role": "",
-    "team": "",
-    "stack": "",
-    "hasReadme": false,
+    "hasReadme": true,
     "related": []
   }
 ]
