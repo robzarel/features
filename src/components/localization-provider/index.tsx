@@ -77,14 +77,14 @@ Language.SimpleToggler = function SimpleToggler() {
         onClick={getHandler('en')}
         data-is-active={language === 'en'}
       >
-        en
+        EN
       </div>
       <div
         className={Styles.lang}
         onClick={getHandler('ru')}
         data-is-active={language === 'ru'}
       >
-        ru
+        RU
       </div>
     </div>
   );

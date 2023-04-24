@@ -19,7 +19,7 @@ const map = {
   },
   less: {
     ru: 'оставить главное',
-    en: 'show only the main',
+    en: 'less...',
   },
   endedAt: {
     ru: 'Сейчас',
