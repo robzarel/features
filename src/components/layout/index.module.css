@@ -40,7 +40,8 @@
   padding: 0 15px;
   box-sizing: border-box;
 }
-.delimiter {
+.navigation {
+  margin-right: auto;
 }
 
 .about,
@@ -51,10 +52,10 @@
   background-color: rgba(var(--background-primary), 0.9);
   padding: 20px 0;
 }
-.toggler {
+
+.languageToggler {
   margin-left: auto;
 }
-
 .main {
   flex: 1 1 auto;
   background-color: rgba(var(--background-secondary), 0.5);

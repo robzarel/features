@@ -1,29 +1,59 @@
 [
   {
     "id": 1,
-    "degree": "Магистратура",
-    "univercity": "Ижевский Государственный технический Университет",
     "started": "2013/09/01",
     "ended": "2015/06/30",
-    "city": "ижевск",
-    "country": "россия"
+    "description": {
+      "ru": {
+        "degree": "магистратура",
+        "univercity": "Ижевский государственный Технический Университет",
+        "city": "ижевск",
+        "country": "россия"
+      },
+      "en": {
+        "degree": "Master of engineering",
+        "univercity": "Izhevsk state Technical University",
+        "city": "izhevsk",
+        "country": "russia"
+      }
+    }
   },
   {
     "id": 0,
-    "degree": "Бакалавриат",
-    "univercity": "Ижевский Государственный технический Университет",
     "started": "2009/09/01",
     "ended": "2013/06/30",
-    "city": "ижевск",
-    "country": "россия"
+    "description": {
+      "ru": {
+        "degree": "бакалавриат",
+        "univercity": "Ижевский государственный Технический Университет",
+        "city": "ижевск",
+        "country": "россия"
+      },
+      "en": {
+        "degree": "bachalor of engineering",
+        "univercity": "Izhevsk state Technical University",
+        "city": "izhevsk",
+        "country": "russia"
+      }
+    }
   },
   {
     "id": 2,
-    "degree": "Переводчик в сфере профессиональных коммуникаций (немецкий язык)",
-    "univercity": "Ижевский Государственный технический Университет",
     "started": "2009/09/01",
     "ended": "2015/06/30",
-    "city": "ижевск",
-    "country": "россия"
+    "description": {
+      "ru": {
+        "degree": "Переводчик в сфере профессиональных коммуникаций (немецкий язык)",
+        "univercity": "Ижевский государственный Технический Университет",
+        "city": "ижевск",
+        "country": "россия"
+      },
+      "en": {
+        "degree": "master of translation and interpreting (german)",
+        "univercity": "Izhevsk state Technical University",
+        "city": "izhevsk",
+        "country": "russia"
+      }
+    }
   }
 ]

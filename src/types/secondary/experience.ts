@@ -1,18 +1,23 @@
 import type { RELATED } from '../common';
 
+type Description = {
+  role: string;
+  achievements: string[];
+  company: string;
+  city: string;
+  country: string;
+};
+
 type Experience = {
   id: number;
   kind: 'development' | 'management';
-  role: string;
-  city: string;
-  country: string;
-  company: string;
-  abstract: string;
-  achievements: string[];
-  description: string;
   started: string;
   ended?: string;
   related?: RELATED[];
+  description: {
+    ru: Description;
+    en: Description;
+  };
 };
 
 export default Experience;

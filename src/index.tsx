@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import Theme from './components/theme-provider';
+import Localization from './components/localization-provider';
+
 import App from './pages';
 
 import './index.css';
@@ -14,7 +16,9 @@ ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <BrowserRouter basename='/features'>
       <Theme>
-        <App />
+        <Localization>
+          <App />
+        </Localization>
       </Theme>
     </BrowserRouter>
   </React.StrictMode>

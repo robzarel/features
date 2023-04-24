@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import api from '../../api';
+import { useLanguage } from '../../components/localization-provider';
 
 import WorkExperience from '../../components/experience';
 import Skill from '../../components/skill';
@@ -11,8 +12,28 @@ import type { CV } from '../../types/common';
 
 import Styles from './index.module.css';
 
+const map = {
+  experience: {
+    ru: 'Опыт работы',
+    en: 'Work experience',
+  },
+  skills: {
+    ru: 'Навыки',
+    en: 'Skills',
+  },
+  education: {
+    ru: 'Образование',
+    en: 'Education',
+  },
+  download: {
+    ru: 'скачать',
+    en: 'download',
+  },
+};
+
 const Experience = () => {
   const [cv, setCv] = useState<CV>();
+  const { language } = useLanguage();
 
   useEffect(() => {
     document.title = 'Lazarev Boris';
@@ -39,16 +60,16 @@ const Experience = () => {
   return (
     <div className={Styles.wrapper}>
       <div className={Styles.about}>
-        <About />
+        <About lang={language} />
       </div>
       <div className={Styles.columns}>
         <div className={Styles.leftColumn}>
           <h2 className={Styles.title}>
-            Опыт работы{' '}
+            {map.experience[language]}
             <span
               className={Styles.download}
               onClick={handleDonwloadClick}
-              title='скачать'
+              title={map.download[language]}
             />
           </h2>
           {cv &&
@@ -61,11 +82,11 @@ const Experience = () => {
         </div>
         <div className={Styles.rightColumn}>
           <div className={Styles.skills}>
-            <h2 className={Styles.title}>Навыки</h2>
+            <h2 className={Styles.title}>{map.skills[language]}</h2>
             {cv && cv.skills.map((item) => <Skill key={item.id} {...item} />)}
           </div>
           <div className={Styles.education}>
-            <h2 className={Styles.title}>Образование</h2>
+            <h2 className={Styles.title}>{map.education[language]}</h2>
             {cv &&
               cv.education.map((item) => <Education key={item.id} {...item} />)}
           </div>
