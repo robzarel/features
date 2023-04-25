@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import type { ChangeEvent } from 'react';
+
+import onlyLetters from 'pure-validators/lib/validators/only-letters';
+import { useTextFormField } from 'pure-validators/lib/form-validation-hooks';
 
 import SearchResult from '../../components/search-result';
 
@@ -10,9 +12,12 @@ import crossIcon from './images/cross.svg';
 
 import Styles from './index.module.css';
 
+const validators = [onlyLetters('allowed only letters')];
+
 const Search = () => {
-  const [search, setSearch] = useState('');
   const [data, setData] = useState<COMMON[]>([]);
+
+  const search = useTextFormField('name', validators);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,16 +29,13 @@ const Search = () => {
     fetchData();
   }, []);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value.toLowerCase());
-  };
   const handleClose = () => {
-    setSearch('');
+    search.reset();
   };
 
   const filtered = data
     .filter(({ name, description }) =>
-      `${name}${description}`.toLocaleLowerCase().includes(search)
+      `${name}${description}`.toLocaleLowerCase().includes(search.value)
     )
     .sort((a, b) => Number(b.hasReadme) - Number(a.hasReadme));
 
@@ -47,17 +49,19 @@ const Search = () => {
         <input
           className={Styles.input}
           type='text'
-          onChange={handleChange}
-          value={search}
+          onChange={search.handleChange}
+          value={search.value}
           placeholder='search by name or description'
+          data-error={!!search.error}
         />
         <div
           className={Styles.close}
-          data-has-value={search.length > 0}
+          data-has-value={search.value.length > 0}
           onClick={handleClose}
         >
           <img className={Styles.cross} src={crossIcon} alt='' />
         </div>
+        {search.error && <p className={Styles.inputError}>{search.error}</p>}
       </div>
       <div className={Styles.results}>
         <div className={Styles.features}>
