@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "serve": "json-server  --routes ./src/server/routes.json --port 3001 --watch ./src/server/db/index.js --static ./src/server/db/ru/readme",
+    "serve": "json-server  --routes ./src/server/routes.json --port 3001 --watch ./src/server/db/index.js --static ./src/server/db/readme",
     "build": "react-scripts build && shx cp build/index.html build/404.html && npm run save-api-json && npm run save-api-md",
     "save-api-json": "node ./src/scripts/save-api-json.js",
     "save-api-md": "shx cp -r ./src/server/db/ru/readme/ ./build/static/db/readme",

@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
 
-const projects = require('./ru/core/projects.json');
-const features = require('./ru/core/features.json');
-const snippets = require('./ru/core/snippets.json');
+const projects = require('./core/projects.json');
+const features = require('./core/features.json');
+const snippets = require('./core/snippets.json');
 
-const experience = require('./ru/common/experience.json');
-const skills = require('./ru/common/skills.json');
-const education = require('./ru/common/education.json');
+const experience = require('./common/experience.json');
+const skills = require('./common/skills.json');
+const education = require('./common/education.json');
 
 const extractData = ({ data, type }) =>
   data.map((item) => ({
