@@ -1,9 +1,7 @@
 import type { CV, RELATED } from '../types/common';
-import getEndpoints from '../server/db';
 
-const endpoints = getEndpoints();
-
-type ENDPOINTS = keyof typeof endpoints;
+// todo: fix import '../server/db' error
+type ENDPOINTS = 'cv' | 'common' | 'projects' | 'features' | 'snippets';
 
 const get = async <T>(endpoint: ENDPOINTS): Promise<T> => {
   const path =
