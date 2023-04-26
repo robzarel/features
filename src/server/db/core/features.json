@@ -64,8 +64,8 @@
   },
   {
     "id": 6,
-    "name": "deploy github pages",
-    "description": "тонкости настройки деплоя на github pages и настройки actions",
+    "name": "github pages hosting",
+    "description": "тонкости настройки деплоя на github pages",
     "hasReadme": false,
     "related": []
   },

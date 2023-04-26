@@ -1,6 +1,9 @@
 import type { CV, RELATED } from '../types/common';
+import getEndpoints from '../server/db';
 
-type ENDPOINTS = 'cv' | 'common' | 'projects' | 'features' | 'snippets' | 'one';
+const endpoints = getEndpoints();
+
+type ENDPOINTS = keyof typeof endpoints;
 
 const get = async <T>(endpoint: ENDPOINTS): Promise<T> => {
   const path =
