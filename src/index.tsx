@@ -4,6 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Theme from './components/theme-provider';
 import Localization from './components/localization-provider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 import App from './pages';
 
@@ -15,11 +18,13 @@ const root = document.getElementById('root') as HTMLElement;
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <BrowserRouter basename='/features'>
-      <Theme>
-        <Localization>
-          <App />
-        </Localization>
-      </Theme>
+      <QueryClientProvider client={queryClient}>
+        <Theme>
+          <Localization>
+            <App />
+          </Localization>
+        </Theme>
+      </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

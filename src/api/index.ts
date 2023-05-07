@@ -1,7 +1,9 @@
-import type { CV, RELATED } from '../types/common';
+import type { CV, RELATED, FEATURE_FLAG } from '../types/common';
 
-// todo: fix import '../server/db' error
-type ENDPOINTS = 'cv' | 'common' | 'projects' | 'features' | 'snippets';
+import getEndpoints from '../server/db';
+
+const endpoints = getEndpoints();
+type ENDPOINTS = keyof typeof endpoints;
 
 const get = async <T>(endpoint: ENDPOINTS): Promise<T> => {
   const path =
@@ -24,6 +26,7 @@ type COMMON = {
 
 type API = {
   get: {
+    featureFlags: () => Promise<FEATURE_FLAG[]>;
     cv: () => Promise<CV>;
     common: () => Promise<COMMON[]>;
     readme: (
@@ -35,6 +38,7 @@ type API = {
 
 const api: API = {
   get: {
+    featureFlags: () => get<FEATURE_FLAG[]>('featureFlags'),
     cv: () => get<CV>('cv'),
     common: () => get<COMMON[]>('common'),
     readme: async (type, id) => {

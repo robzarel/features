@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+import { useQuery } from '@tanstack/react-query';
 
 import onlyLetters from 'pure-validators/lib/validators/only-letters';
 import { useTextFormField } from 'pure-validators/lib/form-validation-hooks';
@@ -6,7 +8,6 @@ import { useTextFormField } from 'pure-validators/lib/form-validation-hooks';
 import SearchResult from '../../components/search-result';
 
 import api from '../../api';
-import type { COMMON } from '../../api';
 
 import crossIcon from './images/cross.svg';
 
@@ -15,19 +16,12 @@ import Styles from './index.module.css';
 const validators = [onlyLetters('allowed only letters')];
 
 const Search = () => {
-  const [data, setData] = useState<COMMON[]>([]);
-
   const search = useTextFormField('name', validators);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetched = await api.get.common();
-
-      setData(fetched);
-    };
-
-    fetchData();
-  }, []);
+  const { data = [] } = useQuery({
+    queryKey: ['common'],
+    queryFn: api.get.common,
+  });
 
   const handleClose = () => {
     search.reset();

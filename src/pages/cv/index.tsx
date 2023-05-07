@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 import api from '../../api';
 import { useLanguage } from '../../components/localization-provider';
@@ -7,8 +8,6 @@ import WorkExperience from '../../components/experience';
 import Skill from '../../components/skill';
 import Education from '../../components/education';
 import About from '../../components/about';
-
-import type { CV } from '../../types/common';
 
 import Styles from './index.module.css';
 
@@ -32,8 +31,12 @@ const map = {
 };
 
 const Experience = () => {
-  const [cv, setCv] = useState<CV>();
   const { language } = useLanguage();
+
+  const { data: cv } = useQuery({
+    queryKey: ['cv'],
+    queryFn: api.get.cv,
+  });
 
   useEffect(() => {
     document.title = 'Lazarev Boris';
@@ -41,16 +44,6 @@ const Experience = () => {
     return () => {
       document.title = 'features';
     };
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await api.get.cv();
-
-      setCv(data);
-    };
-
-    fetchData();
   }, []);
 
   const handleDonwloadClick = () => {

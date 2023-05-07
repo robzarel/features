@@ -13,4 +13,6 @@ type RELATED = {
   id: number;
 };
 
-export type { RELATED, CV };
+type FEATURE_FLAG = { [key: string]: boolean };
+
+export type { RELATED, CV, FEATURE_FLAG };

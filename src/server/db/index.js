@@ -8,6 +8,7 @@ const snippets = require('./core/snippets.json');
 const experience = require('./common/experience.json');
 const skills = require('./common/skills.json');
 const education = require('./common/education.json');
+const featureFlags = require('./common/feature-flags.json');
 
 const extractData = ({ data, type }) =>
   data.map((item) => ({
@@ -34,4 +35,5 @@ module.exports = () => ({
   projects: projects,
   features: features,
   snippets: snippets,
+  featureFlags: featureFlags,
 });
