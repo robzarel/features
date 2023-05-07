@@ -3,7 +3,7 @@ import { useMatch } from 'react-router-dom';
 
 import { Outlet } from 'react-router-dom';
 
-import Theme from '../theme-provider';
+import ThemeToggler from '../theme-toggler';
 import Localization from '../localization-provider';
 import Footer from '../footer';
 import Navigation from '../navigation';
@@ -27,7 +27,7 @@ const Layout = () => {
               </div>
             )}
             <div className={Styles.themeToggler}>
-              <Theme.SimpleToggler />
+              <ThemeToggler />
             </div>
           </div>
         </div>

@@ -3,14 +3,15 @@ import React from 'react';
 import { CopyBlock, solarizedLight, solarizedDark } from 'react-code-blocks';
 
 import type { default as SnippetType } from '../../types/core/snippet';
-import { useTheme } from '../../components/theme-provider';
+import { useAppSelector } from '../../redux/hooks';
 
 import Styles from './index.module.css';
 
 const Snippet = (props: SnippetType) => {
   const { id, name, code, language, description } = props;
 
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.value);
+
   const codeTheme = theme === 'dark' ? solarizedDark : solarizedLight;
 
   return (
