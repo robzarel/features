@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import api from '../../api';
-import { useLanguage } from '../../components/localization-provider';
+
+import { useAppSelector } from '../../redux/hooks';
 
 import WorkExperience from '../../components/experience';
 import Skill from '../../components/skill';
@@ -31,7 +32,7 @@ const map = {
 };
 
 const Experience = () => {
-  const { language } = useLanguage();
+  const language = useAppSelector((state) => state.root.language);
 
   const { data: cv } = useQuery({
     queryKey: ['cv'],

@@ -10,7 +10,7 @@ import Styles from './index.module.css';
 const Snippet = (props: SnippetType) => {
   const { id, name, code, language, description } = props;
 
-  const theme = useAppSelector((state) => state.theme.value);
+  const theme = useAppSelector((state) => state.root.theme);
 
   const codeTheme = theme === 'dark' ? solarizedDark : solarizedLight;
 

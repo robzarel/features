@@ -4,14 +4,15 @@ import EDUCATION from '../../types/secondary/education';
 
 import { toUserFormat, capitalize } from '../../utils';
 
-import { useLanguage } from '../../components/localization-provider';
+import { useAppSelector } from '../../redux/hooks';
 
 import Styles from './index.module.css';
 
 type Props = EDUCATION;
 const Education = (props: Props) => {
   const { id, started, ended, description } = props;
-  const { language } = useLanguage();
+
+  const language = useAppSelector((state) => state.root.language);
 
   const { city, country, degree, univercity } = description[language];
 

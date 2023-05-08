@@ -3,10 +3,10 @@ import React from 'react';
 import Styles from './index.module.css';
 
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-import { setTheme } from '../../redux/slices/theme';
+import { setTheme } from '../../redux/slices/root';
 
 const ThemeToggler = () => {
-  const theme = useAppSelector((state) => state.theme.value);
+  const theme = useAppSelector((state) => state.root.theme);
   const dispatch = useAppDispatch();
 
   const handleSwitchTheme = () => {

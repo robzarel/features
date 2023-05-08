@@ -12,7 +12,7 @@ import { useAppSelector } from '../../redux/hooks';
 import Styles from './index.module.css';
 
 const StyledMarkDown = ({ md }: { md: string }) => {
-  const theme = useAppSelector((state) => state.theme.value);
+  const theme = useAppSelector((state) => state.root.theme);
 
   const codeTheme = theme === 'dark' ? oneDark : oneLight;
 

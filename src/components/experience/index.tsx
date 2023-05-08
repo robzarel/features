@@ -4,7 +4,7 @@ import EXPERIENCE from '../../types/secondary/experience';
 
 import { toUserFormat, capitalize } from '../../utils';
 
-import { useLanguage } from '../../components/localization-provider';
+import { useAppSelector } from '../../redux/hooks';
 
 import Styles from './index.module.css';
 
@@ -30,7 +30,9 @@ const map = {
 type Props = EXPERIENCE;
 const ExperienceItem = (props: Props) => {
   const { started, ended, description } = props;
-  const { language } = useLanguage();
+
+  const language = useAppSelector((state) => state.root.language);
+
   const { role, achievements, company, city, country } = description[language];
 
   const [isExpanded, setExpandedFlag] = useState(false);

@@ -3,8 +3,8 @@ import { useMatch } from 'react-router-dom';
 
 import { Outlet } from 'react-router-dom';
 
-import ThemeToggler from '../theme-toggler';
-import Localization from '../localization-provider';
+import ThemeToggler from '../theme';
+import LanguageToggler from '../localization';
 import Footer from '../footer';
 import Navigation from '../navigation';
 
@@ -23,7 +23,7 @@ const Layout = () => {
             </div>
             {match && (
               <div className={Styles.languageToggler}>
-                <Localization.SimpleToggler />
+                <LanguageToggler />
               </div>
             )}
             <div className={Styles.themeToggler}>
