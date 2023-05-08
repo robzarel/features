@@ -1,11 +1,12 @@
-import type { CV, RELATED, FEATURE_FLAG } from '../types/common';
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import getEndpoints from '../server/db';
+
+import type { CV, RELATED, FEATURE_FLAG } from '../types/common';
 
 const endpoints = getEndpoints();
 type ENDPOINTS = keyof typeof endpoints;
 
-const get = async <T>(endpoint: ENDPOINTS): Promise<T> => {
+const get = async <T>(endpoint: any): Promise<T> => {
   const path =
     process.env.NODE_ENV === 'development'
       ? `http://localhost:3001/api/${endpoint}`
