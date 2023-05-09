@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 
 import StyledMarkDown from '../../components/styled-markdown';
 
 import api from '../../api';
 
 import Styles from './index.module.css';
+type Props = {
+  type: 'feature' | 'project' | 'snippet';
+};
 
-const SnippetPage = () => {
+const DetailedPage = (props: Props) => {
   const { id } = useParams();
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    queryClient.invalidateQueries({ queryKey: ['markdown'] });
+  }, []);
 
   const { data: markdown = '' } = useQuery({
     queryKey: ['markdown'],
     queryFn: () => {
       if (id) {
-        return api.get.readme('snippet', +id);
+        return api.get.readme(props.type, +id);
       }
     },
   });
@@ -27,4 +35,4 @@ const SnippetPage = () => {
   );
 };
 
-export default SnippetPage;
+export default DetailedPage;

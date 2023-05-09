@@ -6,9 +6,7 @@ import CV from './cv';
 import Storage from './storage';
 import NotFound from './not-found';
 
-import Project from './project';
-import Feature from './feature';
-import Snippet from './snippet';
+import Detailed from './detailed';
 
 import useTheme from '../components/theme/useTheme';
 import useLanguage from '../components/localization/useLanguage';
@@ -22,9 +20,9 @@ const App = () => {
       <Route path='/' element={<Layout />}>
         <Route path='/' element={<Storage />} />
         <Route path='/cv' element={<CV />} />
-        <Route path='/project/:id' element={<Project />} />
-        <Route path='/feature/:id' element={<Feature />} />
-        <Route path='/snippet/:id' element={<Snippet />} />
+        <Route path='/project/:id' element={<Detailed type='project' />} />
+        <Route path='/feature/:id' element={<Detailed type='feature' />} />
+        <Route path='/snippet/:id' element={<Detailed type='snippet' />} />
         <Route path='*' element={<NotFound />} />
       </Route>
     </Routes>
