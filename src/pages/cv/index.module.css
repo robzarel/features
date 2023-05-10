@@ -57,6 +57,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 15px;
 }
 
 .download {
@@ -73,10 +74,24 @@
   transition: transform 0.2s ease;
 }
 
+.downloadButton {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 6px 14px;
+  background-color: rgba(var(--background-primary), 0.6);
+  color: white;
+  border: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
 .download:hover {
   transform: scale(1.1);
 }
 
+.downloadButton:hover {
+  background-color: rgba(var(--background-primary), 1);
+  transform: scale(1.1);
+}
 @media screen and (min-width: 567px) {
   .about,
   .leftColumn {
@@ -107,7 +122,8 @@
 }
 
 @media print {
-  .download {
+  .download,
+  .downloadButton {
     display: none;
   }
   .about {

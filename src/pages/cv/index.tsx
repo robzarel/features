@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import api from '../../api';
 
 import { useAppSelector } from '../../redux/hooks';
+import { capitalize } from '../../utils';
 
 import WorkExperience from '../../components/experience';
 import Skill from '../../components/skill';
@@ -66,13 +67,16 @@ const Experience = () => {
               title={map.download[language]}
             />
           </h2>
-          {cv &&
-            cv.experience.map((item) => (
-              <>
-                <WorkExperience key={item.id} {...item} />
-                <br />
-              </>
-            ))}
+          {cv && (
+            <>
+              {cv.experience.map((item) => (
+                <>
+                  <WorkExperience key={item.id} {...item} />
+                  <br />
+                </>
+              ))}
+            </>
+          )}
         </div>
         <div className={Styles.rightColumn}>
           <div className={Styles.skills}>
@@ -86,6 +90,14 @@ const Experience = () => {
           </div>
         </div>
       </div>
+      <button
+        className={Styles.downloadButton}
+        type='button'
+        onClick={handleDonwloadClick}
+        title={map.download[language]}
+      >
+        {capitalize(map.download[language])}
+      </button>
     </div>
   );
 };
