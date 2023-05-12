@@ -32,7 +32,7 @@ const map = {
   },
 };
 
-const Experience = () => {
+const CV = () => {
   const language = useAppSelector((state) => state.root.language);
 
   const { data: cv } = useQuery({
@@ -70,10 +70,7 @@ const Experience = () => {
           {cv && (
             <>
               {cv.experience.map((item) => (
-                <>
-                  <WorkExperience key={item.id} {...item} />
-                  <br />
-                </>
+                <WorkExperience key={item.id} {...item} />
               ))}
             </>
           )}
@@ -102,4 +99,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default CV;

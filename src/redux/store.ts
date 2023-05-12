@@ -1,15 +1,19 @@
+import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './slices/root';
 
-const store = configureStore({
-  reducer: {
-    root: rootReducer,
-  },
-});
+import root from './slices/root';
 
-export default store;
+const rootReducer = combineReducers({ root });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+let store: ReturnType<typeof configureStore>;
+
+const getStore = () => {
+  store = configureStore({ reducer: rootReducer });
+
+  return store;
+};
+
+export default getStore;
+
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;

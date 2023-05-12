@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 .meta {
   width: 100%;

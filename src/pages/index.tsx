@@ -1,19 +1,37 @@
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 
-import Layout from '../components/layout';
+import { useAppSelector, useAppDispatch } from '../redux/hooks';
+
+import { setFeatureFlags } from '../redux/slices/root';
 
 import CV from './cv';
 import Storage from './storage';
 import NotFound from './not-found';
+import Layout from '../components/layout';
 
 import Detailed from './detailed';
-
-import useTheme from '../components/theme/useTheme';
-import useLanguage from '../components/localization/useLanguage';
+import api from '../api';
 
 const App = () => {
-  useTheme();
-  useLanguage();
+  const dispatch = useAppDispatch();
+  const theme = useAppSelector((state) => state.root.theme);
+  const featureFlags = useAppSelector((state) => state.root.featureFlags);
+
+  const { data: flags } = useQuery({
+    queryKey: ['featureFlags'],
+    queryFn: api.get.featureFlags,
+    enabled: featureFlags === undefined,
+  });
+
+  useEffect(() => {
+    flags && dispatch(setFeatureFlags({ value: flags }));
+  }, [flags]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return (
     <Routes>

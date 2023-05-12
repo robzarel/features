@@ -2,9 +2,15 @@ import React from 'react';
 
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setLanguage } from '../../redux/slices/root';
-import type { Languages } from './useLanguage';
 
 import Styles from './index.module.css';
+
+const supportedLanguages = {
+  ru: 'ru',
+  en: 'en',
+};
+
+type Languages = keyof typeof supportedLanguages;
 
 const LanguageToggler = () => {
   const language = useAppSelector((state) => state.root.language);
@@ -34,4 +40,5 @@ const LanguageToggler = () => {
   );
 };
 
+export type { Languages };
 export default LanguageToggler;

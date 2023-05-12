@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import getEndpoints from '../server/db';
 
-import type { CV, RELATED, FEATURE_FLAG } from '../types/common';
+import type { CV, RELATED, FEATURE_FLAGS } from '../types/common';
 
 const endpoints = getEndpoints();
 type ENDPOINTS = keyof typeof endpoints;
@@ -27,7 +27,7 @@ type COMMON = {
 
 type API = {
   get: {
-    featureFlags: () => Promise<FEATURE_FLAG[]>;
+    featureFlags: () => Promise<FEATURE_FLAGS>;
     cv: () => Promise<CV>;
     common: () => Promise<COMMON[]>;
     readme: (
@@ -39,7 +39,7 @@ type API = {
 
 const api: API = {
   get: {
-    featureFlags: () => get<FEATURE_FLAG[]>('featureFlags'),
+    featureFlags: () => get<FEATURE_FLAGS>('featureFlags'),
     cv: () => get<CV>('cv'),
     common: () => get<COMMON[]>('common'),
     readme: async (type, id) => {

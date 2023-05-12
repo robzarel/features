@@ -5,6 +5,13 @@ import Styles from './index.module.css';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setTheme } from '../../redux/slices/root';
 
+const supportedThemes = {
+  light: 'light',
+  dark: 'dark',
+};
+
+type Themes = keyof typeof supportedThemes;
+
 const ThemeToggler = () => {
   const theme = useAppSelector((state) => state.root.theme);
   const dispatch = useAppDispatch();
@@ -24,4 +31,5 @@ const ThemeToggler = () => {
   );
 };
 
+export type { Themes };
 export default ThemeToggler;
