@@ -36,18 +36,17 @@ const map = {
 const CV = () => {
   const dispatch = useAppDispatch();
 
-  const language = useAppSelector((state) => state.root.language);
-  const storeCv = useAppSelector((state) => state.root.cv);
+  const { cv, language } = useAppSelector((state) => state.root);
 
-  const { data: cv } = useQuery({
+  const { data } = useQuery({
     queryKey: ['cv'],
     queryFn: api.get.cv,
-    enabled: storeCv === undefined,
+    enabled: cv === undefined,
   });
 
   useEffect(() => {
-    cv && dispatch(setCv({ value: cv }));
-  }, [cv]);
+    data && dispatch(setCv({ value: data }));
+  }, [data]);
 
   useEffect(() => {
     document.title = 'Lazarev Boris';

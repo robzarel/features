@@ -18,30 +18,32 @@ import Styles from './index.module.css';
 const validators = [onlyLetters('allowed only letters')];
 
 const Storage = () => {
-  const dispatch = useAppDispatch();
-  const storeCommon = useAppSelector((state) => state.root.common);
-
   const search = useTextFormField('name', validators);
 
-  const { data: common = [] } = useQuery({
+  const dispatch = useAppDispatch();
+  const common = useAppSelector((state) => state.root.common);
+
+  const { data } = useQuery({
     queryKey: ['common'],
     queryFn: api.get.common,
-    enabled: storeCommon === undefined,
+    enabled: common === undefined,
   });
 
   useEffect(() => {
-    common && common.length > 0 && dispatch(setCommon({ value: common }));
-  }, [common]);
+    data && dispatch(setCommon({ value: data }));
+  }, [data]);
 
   const handleClose = () => {
     search.reset();
   };
 
   const filtered = common
-    .filter(({ name, description }) =>
-      `${name}${description}`.toLocaleLowerCase().includes(search.value)
-    )
-    .sort((a, b) => Number(b.hasReadme) - Number(a.hasReadme));
+    ? common
+        .filter(({ name, description }) =>
+          `${name}${description}`.toLocaleLowerCase().includes(search.value)
+        )
+        .sort((a, b) => Number(b.hasReadme) - Number(a.hasReadme))
+    : [];
 
   const projects = filtered.filter(({ type }) => type === 'project');
   const features = filtered.filter(({ type }) => type === 'feature');

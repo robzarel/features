@@ -16,18 +16,17 @@ import api from '../api';
 
 const App = () => {
   const dispatch = useAppDispatch();
-  const theme = useAppSelector((state) => state.root.theme);
-  const featureFlags = useAppSelector((state) => state.root.featureFlags);
+  const { featureFlags, theme } = useAppSelector((state) => state.root);
 
-  const { data: flags } = useQuery({
+  const { data } = useQuery({
     queryKey: ['featureFlags'],
     queryFn: api.get.featureFlags,
     enabled: featureFlags === undefined,
   });
 
   useEffect(() => {
-    flags && dispatch(setFeatureFlags({ value: flags }));
-  }, [flags]);
+    data && dispatch(setFeatureFlags({ value: data }));
+  }, [data]);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
