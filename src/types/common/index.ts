@@ -15,4 +15,13 @@ type RELATED = {
 
 type FEATURE_FLAGS = { [key: string]: boolean };
 
-export type { RELATED, CV, FEATURE_FLAGS };
+type COMMON = {
+  type: 'project' | 'feature' | 'snippet';
+  id: number;
+  name: string;
+  description: string;
+  related: RELATED;
+  hasReadme: boolean;
+};
+
+export type { RELATED, CV, FEATURE_FLAGS, COMMON };

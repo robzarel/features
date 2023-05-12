@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useQuery } from '@tanstack/react-query';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { setCommon } from '../../redux/slices/root';
 
 import onlyLetters from 'pure-validators/lib/validators/only-letters';
 import { useTextFormField } from 'pure-validators/lib/form-validation-hooks';
@@ -15,19 +17,27 @@ import Styles from './index.module.css';
 
 const validators = [onlyLetters('allowed only letters')];
 
-const Search = () => {
+const Storage = () => {
+  const dispatch = useAppDispatch();
+  const storeCommon = useAppSelector((state) => state.root.common);
+
   const search = useTextFormField('name', validators);
 
-  const { data = [] } = useQuery({
+  const { data: common = [] } = useQuery({
     queryKey: ['common'],
     queryFn: api.get.common,
+    enabled: storeCommon === undefined,
   });
+
+  useEffect(() => {
+    common && common.length > 0 && dispatch(setCommon({ value: common }));
+  }, [common]);
 
   const handleClose = () => {
     search.reset();
   };
 
-  const filtered = data
+  const filtered = common
     .filter(({ name, description }) =>
       `${name}${description}`.toLocaleLowerCase().includes(search.value)
     )
@@ -81,4 +91,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Storage;

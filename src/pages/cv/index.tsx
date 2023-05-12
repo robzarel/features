@@ -3,8 +3,9 @@ import { useQuery } from '@tanstack/react-query';
 
 import api from '../../api';
 
-import { useAppSelector } from '../../redux/hooks';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { capitalize } from '../../utils';
+import { setCv } from '../../redux/slices/root';
 
 import WorkExperience from '../../components/experience';
 import Skill from '../../components/skill';
@@ -33,12 +34,20 @@ const map = {
 };
 
 const CV = () => {
+  const dispatch = useAppDispatch();
+
   const language = useAppSelector((state) => state.root.language);
+  const storeCv = useAppSelector((state) => state.root.cv);
 
   const { data: cv } = useQuery({
     queryKey: ['cv'],
     queryFn: api.get.cv,
+    enabled: storeCv === undefined,
   });
+
+  useEffect(() => {
+    cv && dispatch(setCv({ value: cv }));
+  }, [cv]);
 
   useEffect(() => {
     document.title = 'Lazarev Boris';

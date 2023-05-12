@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import getEndpoints from '../server/db';
 
-import type { CV, RELATED, FEATURE_FLAGS } from '../types/common';
+import type { CV, FEATURE_FLAGS, COMMON } from '../types/common';
 
 const endpoints = getEndpoints();
 type ENDPOINTS = keyof typeof endpoints;
@@ -14,15 +14,6 @@ const get = async <T>(endpoint: ENDPOINTS): Promise<T> => {
 
   const response = await fetch(path);
   return await response.json();
-};
-
-type COMMON = {
-  type: 'project' | 'feature' | 'snippet';
-  id: number;
-  name: string;
-  description: string;
-  related: RELATED;
-  hasReadme: boolean;
 };
 
 type API = {
