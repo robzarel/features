@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 
 import Styles from './index.module.css';
 
@@ -23,6 +23,10 @@ const ThemeToggler = () => {
       dispatch(setTheme({ value: 'dark' }));
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem('features-color-theme', theme);
+  }, [theme]);
 
   return (
     <div className={Styles.simpleToggler} onClick={handleSwitchTheme}>

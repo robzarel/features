@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setLanguage } from '../../redux/slices/root';
@@ -19,6 +19,10 @@ const LanguageToggler = () => {
   const getHandler = (language: Languages) => () => {
     dispatch(setLanguage({ value: language }));
   };
+
+  useEffect(() => {
+    localStorage.setItem('features-cv-language', language);
+  }, [language]);
 
   return (
     <div className={Styles.simpleToggler}>
