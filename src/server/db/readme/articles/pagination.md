@@ -1,6 +1,6 @@
 # Пагинация
 
-Пишем пагинатор и покрываем его тестами в React приложении.
+Пишем простой переиспользуемый пагинатор и покрываем его тестами.
 
 ## План действий
 
@@ -14,9 +14,9 @@
 
 Итак, поехали!
 
-## Инициализация приложения.
+## Инициализация приложения
 
-Минимум действий - берём [create-react-app](https://create-react-app.dev/) с шаблоном typescript и разворачиваем приложение.
+Минимум действий: берём [create-react-app](https://create-react-app.dev/) с шаблоном typescript и разворачиваем приложение.
 
 ```bash
   npx create-react-app my-app --template typescript
@@ -24,7 +24,7 @@
 
 ## Как ходим за данными
 
-Данные будем хранить в компоненте контейнере. Он будет следить за состоянием, вызывать метод api и прокидывать обновлённые данные вниз в наш будущий компонент.
+Данные будем хранить в компоненте контейнере. Он будет следить за состоянием, вызывать метод api и прокидывать обновлённые данные вниз (в наш будущий компонент).
 
 Подтягивать данные будем традиционно с использованием хука [useEffect](https://react.dev/reference/react/useEffect), а сохранять данные с помощью [useState](https://react.dev/reference/react/useState).
 
@@ -69,7 +69,7 @@ function App() {
 export default App;
 ```
 
-Api модуль может быть любым, но если лень придумывать, то ориентировочную реализацию можно посмотреть в другой моей статье - [Github pages для pet проектов](https://habr.com/ru/articles/732546/) в разделе **API модуль**.
+Api модуль может быть любым, но если лень придумывать, то ориентировочную реализацию можно посмотреть в другой моей статье: [Github pages для pet проектов](https://habr.com/ru/articles/732546/) в разделе **API модуль**.
 
 А про типизацию **catch** блока в typescript можно почитать [здесь](https://kentcdodds.com/blog/get-a-catch-block-error-message-with-typescript).
 
@@ -128,7 +128,18 @@ import React from 'react';
 
 import Styles from './index.module.css';
 
-type PaginationProps = {...};
+type PaginationProps = {
+  onNextPageClick: () => void;
+  onPrevPageClick: () => void;
+  disable: {
+    left: boolean;
+    right: boolean;
+  };
+  nav?: {
+    current: number;
+    total: number;
+  };
+};
 
 const Pagination = (props: PaginationProps) => {
   const { nav = null, disable, onNextPageClick, onPrevPageClick } = props;
@@ -144,24 +155,24 @@ const Pagination = (props: PaginationProps) => {
     <div className={Styles.paginator}>
       <button
         className={Styles.arrow}
-        type="button"
+        type='button'
         onClick={handlePrevPageClick}
         disabled={disable.left}
-        data-testid="pagination-prev-button"
+        data-testid='pagination-prev-button'
       >
         {'<'}
       </button>
       {nav && (
-        <span className={Styles.navigation} data-testid="pagination-navigation">
+        <span className={Styles.navigation} data-testid='pagination-navigation'>
           {nav.current} / {nav.total}
         </span>
       )}
       <button
         className={Styles.arrow}
-        type="button"
+        type='button'
         onClick={handleNextPageClick}
         disabled={disable.right}
-        data-testid="pagination-next-button"
+        data-testid='pagination-next-button'
       >
         {'>'}
       </button>
@@ -172,11 +183,16 @@ const Pagination = (props: PaginationProps) => {
 export default React.memo(Pagination);
 ```
 
-## Соединяем: пагинатор и состояние контейнера
+## Соединяем контейнер и пагинатор
 
 Пишем обработчики и прокидываем состояние в компонент пагинатора.
 
 ```typescript
+const ROWS_PER_PAGE = 10;
+
+const getTotalPageCount = (rowCount: number): number =>
+  Math.ceil(rowCount / ROWS_PER_PAGE);
+
 const handleNextPageClick = useCallback(() => {
   const current = page;
   const next = current + 1;
@@ -197,7 +213,7 @@ const handlePrevPageClick = useCallback(() => {
 
 ### Итого
 
-Весь компонент контейнер целиком:
+Осталось только подключить наш компонент **Pagination** и наш компонент контейнер:
 
 ```typescript
 import React, { useEffect, useState, useCallback } from 'react';
@@ -285,18 +301,17 @@ function App() {
 export default App;
 ```
 
-Мы закончили с логикой. Наш компонент может как изменять состояние контейнера, так и реагировать на изменение этого состояния.
-Так же мы предусмотрели режим работы без навигации.
+Мы закончили с логикой. Наш компонент может как изменять состояние контейнера, так и реагировать на изменение этого состояния. Так же мы предусмотрели режим работы без навигации.
 
-Дело осталось за малым - написать парочку тестов и приобрести окончательную уверенность в нашем компоненте.
+Дело осталось за малым - написать парочку тестов и приобрести окончательную уверенность в нашем компоненте при его повторном использовании)
 
 ## Покрываем тестами
 
 Компонент у нас достаточно простой, поэтому тестировать будем только 3 аспекта работы нашего компонента:
 
 - вызов **onClick** обработчиков при нажатии на стрелки
-- простановку **disable** аттрибудтов на стрелках пагинатора в граничных состояниях
-- корректуню работу **условного рендеринга** навигации
+- простановку **disable** атрибутов на стрелках пагинатора в граничных состояниях
+- коректуню работу **условного рендеринга** навигации
 
 ### Структура теста
 
@@ -309,7 +324,7 @@ export default App;
 
 За рендеринг отвечает метод **render**. Он TODO описание что он делает
 Метод screen поможет нам найти элементы. В нашем случае будем использовать **screen.getByTestId()**
-А методы **fireEvent** дадут нам возможность иммитировать события реального пользователя.
+А методы **fireEvent** дадут нам возможность имитировать события реального пользователя.
 
 Все эти объекты мы берём из **'@testing-library/react'**:
 
@@ -322,13 +337,13 @@ import { render, fireEvent, screen } from '@testing-library/react';
 PS:
 Всё первоначальные настройки для запуска тестов у нас уже есть из коробки [create-react-app](https://create-react-app.dev/docs/running-tests/)
 
-### Добавляем тестовые аттрибуты
+### Добавляем тестовые атрибуты
 
-Для того, чтобы мы могли идентифицировать в тесте наши элементы есть хороший способ - поиск по аттрибуту.
-На самом деле способов очень много (поиск по роли, тексту и т.д), но для простоты и наглядности будем использовать именно аттрибуты.
+Для того, чтобы мы могли идентифицировать в тесте наши элементы есть хороший способ - поиск по атрибуту.
+На самом деле способов очень много (поиск по роли, тексту и т.д), но для простоты и наглядности будем использовать именно атрибуты.
 
-Итак, добавляем на нужные нам элементы аттрибуд **data-testid** с уникальным значением.
-Желательно, чтобы значение аттрибута было уникально не только в рамках компонента, но и в рамках любого контекста, где он (компонент) будет применятся.
+Итак, добавляем на нужные нам элементы атрибут **data-testid** с уникальным значением.
+Желательно, чтобы значение атрибута было уникально не только в рамках компонента, но и в рамках любого контекста, где он (компонент) будет применятся.
 
 ```typescript
 ...
@@ -362,7 +377,7 @@ const Pagination = (props: PaginationProps) => {
 export default React.memo(Pagination);
 ```
 
-### Тестируем простановку аттрибутов disabled
+### Тестируем простановку атрибутов disabled
 
 ```typescript
 import '@testing-library/jest-dom';
@@ -371,7 +386,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import Pagination from '../../src/components/pagination';
 
 describe('React component: Pagination', () => {
-  it('Должен проставлятся атрибут [disabled] для кнопки "назад", если выбрана первая страница', async () => {
+  it('Должен проставляться атрибут [disabled] для кнопки "назад", если выбрана первая страница', async () => {
     render(
       <Pagination
         disable={{
@@ -387,7 +402,7 @@ describe('React component: Pagination', () => {
     expect(prevButton).toHaveAttribute('disabled');
   });
 
-  it('Должен проставлятся атрибут [disabled] для кнопки "вперёд", если выбрана последняя страница', async () => {
+  it('Должен проставляться атрибут [disabled] для кнопки "вперёд", если выбрана последняя страница', async () => {
     render(
       <Pagination
         disable={{
@@ -407,10 +422,12 @@ describe('React component: Pagination', () => {
 
 ### Тестируем условный рендеринг навигации
 
+Нам понадобится метод [toThrow](https://jestjs.io/docs/26.x/expect#tothrowerror), а в сам expect мы передадим функцию, а не переменную.
+
 ```typescript
 describe('React component: Pagination', () => {
-  it('Должен проставлятся атрибут [disabled] для кнопки "назад", если выбрана первая страница', async () => {...});
-  it('Должен проставлятся атрибут [disabled] для кнопки "вперёд", если выбрана последняя страница', async () => {...});
+  it('Должен проставляться атрибут [disabled] для кнопки "назад", если выбрана первая страница', async () => {...});
+  it('Должен проставляться атрибут [disabled] для кнопки "вперёд", если выбрана последняя страница', async () => {...});
 
   it('Не должна отображаться навигация "<текущая страница>/<все страницы>" если не предоставлен соответствующий пропс "nav"', async () => {
     render(
@@ -432,7 +449,7 @@ describe('React component: Pagination', () => {
 
 ### Тестируем работу коллбэков
 
-Здесь нам нужно воспользовать методом **toHaveBeenCalledTimes**
+Здесь нам нужно воспользоваться методом **toHaveBeenCalledTimes**
 
 ```typescript
 import '@testing-library/jest-dom';
@@ -441,8 +458,8 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import Pagination from '../../src/components/pagination';
 
 describe('React component: Pagination', () => {
-  it('Должен проставлятся атрибут [disabled] для кнопки "назад", если выбрана первая страница', async () => {...});
-  it('Должен проставлятся атрибут [disabled] для кнопки "вперёд", если выбрана последняя страница', async () => {...});
+  it('Должен проставляться атрибут [disabled] для кнопки "назад", если выбрана первая страница', async () => {...});
+  it('Должен проставляться атрибут [disabled] для кнопки "вперёд", если выбрана последняя страница', async () => {...});
   it('Не должна отображаться навигация "<текущая страница>/<все страницы>" если не предоставлен соответствующий пропс "nav"', async () => {...});
 
   it('Должен вызываться обработчик "onPrevPageClick" при клике на кнопку "назад"', async () => {
