@@ -1,15 +1,17 @@
-# Кастомный селект
-
-Пишем кастомный select для React приложения. Покрываем всё тестами на Jest.
+Пишем минималистичный кастомный select компонент для React приложения. Покрываем всё тестами на Jest.
 
 ## План действий
 
-0. Определяем цель
-1. Сетапим проект
+Общий план действий состоит из 6 этапов:
+
+1. Определяем цель
 2. Пишем компонент Select
 3. Создаём компонент Option
 4. Собираем всё в контейнере и запускаем
-5. Покрываем тестами
+5. Поддержка ввода с клавиатуры
+6. Покрываем тестами
+
+Перед стартом стоит отметить, что в статье не будет приведён css код компонента, так как мы сосредоточимся на логике и написании тестов. Все стили можно найти в репозитории по [этой ссылке](https://github.com/robzarel/gh-pages-demo/blob/article-examples/src/components/select/index.module.css). Также при потребности адаптировать компонент к разным цветовым темам, то можно почитать статью про [Переключение цветовых тем в React приложении](https://habr.com/ru/articles/732534/).
 
 Поехали!
 
@@ -23,7 +25,7 @@
 
 Компонент будет получать состояние из контейнера "сверху". Ровно как и сами опции для выбора. Это позволит нам легко переиспользовать компонент.
 
-Ну и разумеется должны быть способы прокинуть наверх информацию о наступлении событий выбор опции и закрытие выпадающего списка.
+Ну и разумеется должны быть способы прокинуть наверх информацию о наступлении событий выбора опции и закрытия выпадающего списка.
 
 ## Инициализация приложения
 
@@ -161,6 +163,7 @@ export default Select;
 #### Подход к стилизации
 
 Для стилизации будем использовать [css modules](https://github.com/css-modules/css-modules) для стилизации (поскольку в основе приложения лежит react-create-app с шаблоном typescript, то поддержка css modules у нас уже реализована из коробки).
+
 Нам достаточно только импортировать стили и применять к элементам:
 
 ```typescript
@@ -173,9 +176,10 @@ export default Select;
 #### Состояния компонента
 
 У нас есть достаточно большое количество переменных, которые так или иначе, влияют на отображение селекта.
+
 Пара вариантов отображения за счёт свойства **status**, зависимость от режима отображения **mode** и состояния **isOpen**. Плюс добавится ещё 2 варианта отображения во состоянии "выбран/не выбран" какой-либо элемент из выпадающего списка. Список большой (и может быть ещё больше при желании).
 
-Для удобной стилизации всех этих состояний мы будем использовать **data-** атрибуты. Состояния выбранного **"режима"** и состояние селекта **"открыт/закрыт"** будут влиять на стилизацию всего компонента, поэтому мы разместим атрибуты **data-is-active** и **data-mode** на рутовом элементе компонента:
+Для удобной стилизации всех этих состояний мы будем использовать **data** атрибуты. Состояния выбранного **"режима"** и состояние селекта **"открыт/закрыт"** будут влиять на стилизацию всего компонента, поэтому мы разместим атрибуты **data-is-active** и **data-mode** на рутовом элементе компонента:
 
 ```typescript
 const Select = (props: SelectProps) => {
@@ -191,7 +195,7 @@ const Select = (props: SelectProps) => {
 }
 ```
 
-Так же добавим иконку стрелочки, чтобы наш селект выгладел более "канонично":
+Так же добавим иконку стрелочки, чтобы наш селект выглядел более "канонично":
 
 ```typescript
 import { ReactComponent as ArrowDown } from './assets/arrow-down.svg';
@@ -216,7 +220,7 @@ const Select = (props: SelectProps) => {
 
 Импорт svg картинки странный, но что поделать - таковы требования [импорта svg](https://create-react-app.dev/docs/adding-images-fonts-and-files/#adding-svgs) в create-react-app.
 
-Состояния статус и выбран/не выбран" будут влиять на отображение нашего поля ввода (плейсхолдера). Следовательно атрибуты **data-status** и **data-selected** мы добавляем к этому самому плейсхолдеру.
+Состояния статус и выбран/не выбран" будут влиять на отображение нашего поля ввода (плейсхолдера). Следовательно атрибуты **data-status** и **data-selected** мы добавляем к этому самому плейсхолдеру:
 
 ```typescript
 const Select = (props: SelectProps) => {
@@ -248,8 +252,9 @@ const Select = (props: SelectProps) => {
 
 Осталось только отрендерить сам выпадающий список и написать обработчики на выбор значений элементов списка и клика на плейсхолдер.
 
-Обработчик для клика по плейсхолдеру будет максимально простым - его задача просто менять значение булевого флаг **isOpen** на противоложное.
-Так же будет второй обработчик, который будет прокидываться в будущий компонент **<Option />**. Делать он будет тоже самое, что и хендлер для клика по плейсхолдеру, только в дополнение вызовет колбэк **onChange**.
+Обработчик для клика по плейсхолдеру будет максимально простым - его задача просто менять значение булевого флага **isOpen** на противоположное.
+
+Так же будет второй обработчик, который будет прокидываться в будущий компонент **<Option />**. Делать он будет тоже самое, что и хендлер для клика по плейсхолдеру, только в дополнение вызовет метод **onChange**.
 
 Выпадающий список будет спрятан за условный рендеринг.
 
@@ -262,7 +267,7 @@ type OptionProps = {
 };
 ```
 
-В итоге мы получаем следующий компонет Select:
+В итоге мы получаем следующий компонент Select:
 
 ```typescript
 type SelectProps = {
@@ -384,11 +389,74 @@ const Option = (props: OptionProps) => {
 };
 ```
 
-### Код
+### Поддержка ввода с клавиатуры
 
-Весь код компонента можно посмотреть по ссылке [](); TODO
+Для реализации возможности взаимодействия с селектом с клавиатуры, нам потребуется немного доработать наши компоненты.
 
-## Используем наш селект
+#### Дорабатываем Select
+
+Нам нужно по нажатию на **enter** при фокусе на плейсхолдер открывать/скрывать выпадающий список.
+Для этого используем useRef и слушаем событие keydown:
+
+```typescript
+  const placeholderRef = useRef<HTMLDivElement>(null);
+  ...
+  useEffect(() => {
+    const placeholderEl = placeholderRef.current;
+    if (!placeholderEl) return;
+
+    const handleClick = (event: KeyboardEvent) => {
+      if (event.key === 'Enter') {
+        setIsOpen((prev) => !prev);
+      }
+    };
+
+    placeholderEl.addEventListener('keydown', handleClick);
+
+    return () => {
+      placeholderEl.removeEventListener('keydown', handleClick);
+    };
+  }, []);
+  ...
+  <div className={Styles.placeholder} { /* rest attrs */ } ref={placeholderRef}>...</div>
+```
+
+#### Дорабатываем Option
+
+В самом же **Option** нам нужно так же слушать собыите нажатия, но при этом проверять находится ли наш option в фокусе или нет. Если option в фокусе, то вызываем обработчик **onClick**
+
+```typescript
+  const optionRef = useRef<HTMLLIElement>(null);
+  ...
+  useEffect(() => {
+    const option = optionRef.current;
+    if (!option) return;
+
+    const handleEnterPress = (event: KeyboardEvent) => {
+      if ((document.activeElement === option) && event.key === 'Enter') {
+        onClick(value);
+      }
+    }
+
+    option.addEventListener('keydown', handleEnterPress);
+
+    return () => {
+      option.removeEventListener('keydown', handleEnterPress);
+    };
+  }, [value, onClick]);
+  ...
+  <li className={Styles.option} { /* rest attrs */ } ref={optionRef} >...</li>
+```
+
+activeElement содержит в себе ссылку на элемент документа, который находится в фокусе. Подробнее можно прочитать на MDN: [document.activeElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement).
+
+### Код и демо
+
+Код и демо компонента можно посмотреть на [codesandbox.custom-select](https://codesandbox.io/s/robzarel-custom-select-c7w69f)
+
+###
+
+## Собираем всё в контейнере и запускаем
 
 Данные для селекта будем хранить в отдельном файле, под названием **options.json**:
 
@@ -447,29 +515,30 @@ export default App;
 
 ## Пишем тесты
 
-Компонент у нас достаточно простой, поэтому тестировать будем только 3 аспекта работы нашего компонента:
-
-перед тестированием определяем чо как будем искать
-
-### Перед началом
-
-проставляем
-
-- data-testid="selectWrapper" для обёртки компонента
-- data-testid="selectDropdown" для выпадающего списка
-- data-testid={`select-option-${value}`} для каждого Option
-
-Плейсхолдер будем искать просто по тексту через **screen.getByText('placeholder')**
-
-Тестировать будем только 2 аспекта работы нашего компонента:
+Тестировать будем 3 аспекта работы нашего компонента:
 
 - проставление значений атрибутов: **data-selected**, **data-mode**, **data-status** и **data-is-active**
 - открытие/закрытие выпадающего списка
 - вызов коллбэков
 
+PS:
+Перед началом проставляем необходимые нам data-testid атрибуты:
+
+- data-testid="selectWrapper" для обёртки компонента
+- data-testid="selectDropdown" для выпадающего списка
+- data-testid={`select-option-${value}`} для каждого Option
+
+Они нужны для того, чтобы мы могли идентифицировать в тесте наши элементы.
+
+Плейсхолдер будем искать просто по тексту через **screen.getByText('placeholder')**
+
+Про структуру теста и используемые методы можно прочитать в другой моей статье про [пагинацию в React приложении](https://habr.com/ru/articles/734980/) в разделе **Структура теста**.
+
+Поехали!
+
 ### Проставление атрибутов
 
-#### Фиксируем корректное проставление значений data-selected атрибута.
+**Фиксируем корректное проставление значений data-selected атрибута.**
 
 ```javascript
 import '@testing-library/jest-dom';
@@ -479,7 +548,7 @@ import Select from './index';
 import options from './options.json';
 
 describe('React component: Select', () => {
-  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбранно значение', async () => {
+  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбрано значение', async () => {
     render(
       <Select
         options={options}
@@ -492,7 +561,7 @@ describe('React component: Select', () => {
     const placeholder = screen.queryByText(options[0].title);
     expect(placeholder).toHaveAttribute('data-selected', 'true');
   });
-  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбранно значение селекта', async () => {
+  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбрано значение селекта', async () => {
     render(
       <Select
         options={options}
@@ -509,7 +578,7 @@ describe('React component: Select', () => {
 }
 ```
 
-#### Фиксируем корректное проставление значений data-mode атрибута
+**Фиксируем корректное проставление значений data-mode атрибута.**
 
 ```javascript
 import '@testing-library/jest-dom';
@@ -519,8 +588,8 @@ import Select from './index';
 import options from './options.json';
 
 describe('React component: Select', () => {
-  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбранно значение', async () => {...});
-  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбранно значение селекта', async () => {...});
+  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбрано значение', async () => {...});
+  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбрано значение селекта', async () => {...});
 
   it('Должен проставляться атрибут [data-mode="rows"] для selectWrapper, если передано значение mode=rows', async () => {
     render(
@@ -566,7 +635,7 @@ describe('React component: Select', () => {
 }
 ```
 
-#### Фиксируем корректное проставление значений data-status атрибута
+**Фиксируем корректное проставление значений data-status атрибута.**
 
 ```javascript
 import '@testing-library/jest-dom';
@@ -576,8 +645,8 @@ import Select from './index';
 import options from './options.json';
 
 describe('React component: Select', () => {
-  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбранно значение', async () => {...});
-  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбранно значение селекта', async () => {...});
+  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбрано значение', async () => {...});
+  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбрано значение селекта', async () => {...});
 
   it('Должен проставляться атрибут [data-mode="rows"] для selectWrapper, если передано значение mode=rows', async () => {...});
   it('Должен проставляться атрибут [data-mode="cells"] для selectWrapper, если передано значение mode=cells', async () => {...});
@@ -626,7 +695,7 @@ describe('React component: Select', () => {
 }
 ```
 
-#### Фиксируем корректное проставление значений data-is-active атрибута
+**Фиксируем корректное проставление значений data-is-active атрибута.**
 
 ```javascript
 import '@testing-library/jest-dom';
@@ -636,8 +705,8 @@ import Select from './index';
 import options from './options.json';
 
 describe('React component: Select', () => {
-  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбранно значение', async () => {...});
-  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбранно значение селекта', async () => {...});
+  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбрано значение', async () => {...});
+  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбрано значение селекта', async () => {...});
 
   it('Должен проставляться атрибут [data-mode="rows"] для selectWrapper, если передано значение mode=rows', async () => {...});
   it('Должен проставляться атрибут [data-mode="cells"] для selectWrapper, если передано значение mode=cells', async () => {...});
@@ -690,7 +759,7 @@ describe('React component: Select', () => {
 }
 ```
 
-#### Фиксируем поведение открытия/закрытия выпадающего списка
+**Фиксируем поведение открытия/закрытия выпадающего списка.**
 
 ```javascript
 import '@testing-library/jest-dom';
@@ -700,8 +769,8 @@ import Select from './index';
 import options from './options.json';
 
 describe('React component: Select', () => {
-  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбранно значение', async () => {...});
-  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбранно значение селекта', async () => {...});
+  it('Должен проставляться атрибут [data-selected="true"] для плейсхолдера, если было выбрано значение', async () => {...});
+  it('Должен проставляться атрибут [data-selected="false"] для плейсхолдера, если НЕ было выбрано значение селекта', async () => {...});
 
   it('Должен проставляться атрибут [data-mode="rows"] для selectWrapper, если передано значение mode=rows', async () => {...});
   it('Должен проставляться атрибут [data-mode="cells"] для selectWrapper, если передано значение mode=cells', async () => {...});
@@ -810,18 +879,25 @@ describe('React component: Select', () => {
 
 Тестов хоть и много, но они очень похожи друг на друга и пишутся быстро).
 
+Все тесты можно найти по [codesandbox.custom-select](https://codesandbox.io/s/robzarel-custom-select-c7w69f?file=/src/components/select/select.test.js).
+
 ## Итого
 
-Мы написали компактный и надёжный (благодаря тестам) кастомный селект.
+Мы написали компактный и достаточно надёжный (благодаря пачке тестов) кастомный селект.
 
 Спасибо за чтение и удачи в написании ваших кастомных компонентов)
 
 PS: Ссылки из статьи:
 
+- демо компонента [codesandbox](https://codesandbox.io/s/robzarel-custom-select-c7w69f)
+- про [create-react-app](https://create-react-app.dev/)
+- про [импорт svg](https://create-react-app.dev/docs/adding-images-fonts-and-files/#adding-svgs) в create-react-app
+- про [css modules](https://github.com/css-modules/css-modules)
 - про [условный рендеринг](https://react.dev/learn/conditional-rendering)
 - про [@testing-library/react](https://testing-library.com/docs/react-testing-library/example-intro)
-- про [create-react-app](https://create-react-app.dev/)
 - про [useEffect](https://react.dev/reference/react/useEffect), [useState](https://react.dev/reference/react/useState) и [useRef](https://react.dev/reference/react/useRef)
 - про [React.memo](https://react.dev/reference/react/memo)
 - про [утечки памяти](https://www.ditdot.hr/en/causes-of-memory-leaks-in-javascript-and-how-to-avoid-them#event-listeners)
-- про [css modules](https://github.com/css-modules/css-modules)
+- про [Переключение цветовых тем в React приложении](https://habr.com/ru/articles/732534/)
+- про [Пагинацию в React приложении](https://habr.com/ru/articles/734980/)
+- про [document.activeElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement)
